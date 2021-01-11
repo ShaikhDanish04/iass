@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
     <a class="navbar-brand" href="#">IASS</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,8 +16,8 @@
             </li>
         </ul>
         <div>
-            <button class="btn btn-outline-light">Login</button>
-            <button class="btn btn-light">Register</button>
+            <button class="btn btn-outline-dark">Login</button>
+            <button class="btn btn-dark">Register</button>
         </div>
     </div>
 </nav>
