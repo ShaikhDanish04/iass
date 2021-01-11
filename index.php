@@ -36,12 +36,23 @@ if (substr($url_request, -1) == '/') {
 
 </head>
 
-<?php
-if (file_exists('views/' . $url_request . '.php')) {
-    require_once('views/' . $url_request . '.php');
-} else {
-    require_once('components/404.php');
-}
-?>
+<body style="background: linear-gradient(45deg, #fff, #ddd);">
+
+    <style>
+        .table td,
+        .table th {
+            vertical-align: middle;
+        }
+    </style>
+
+    <?php include('components/navbar.php'); ?>
+    <?php
+    if (file_exists('views/' . $url_request . '.php')) {
+        require_once('views/' . $url_request . '.php');
+    } else {
+        require_once('components/404.php');
+    }
+    ?>
+</body>
 
 </html>
