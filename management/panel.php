@@ -20,7 +20,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Danish Shaikh <?php echo date('Y') ?></div>
+                        <!-- <div class="text-muted">Copyright &copy; Danish Shaikh <?php echo date('Y') ?></div> -->
                         <div>
                             <a href="#">Privacy Policy</a>
                             &middot;
@@ -36,5 +36,12 @@
 <script>
     $(document).ready(function() {
         $('.data-table').DataTable();
+        $('.qr_code').each(function() {
+            $(this).qrcode({
+                text: $(this).attr('data-url'),
+                width: 64,
+                height: 64
+            });
+        })
     });
 </script>

@@ -15,6 +15,7 @@
                         <th class="text-nowrap">Pilot Name</th>
                         <th>Departure</th>
                         <th>Arrival</th>
+                        <th>QR Code</th>
                         <th class="text-nowrap">Tickets Booked</th>
 
                         <th>Action</th>
@@ -45,10 +46,11 @@
                                 '       <p class="small">' . $arrival['state'] . '</p>'  .
                                 '       <p>' . pdate($row['arrival_date']) . ' ' . ptime($row['arrival_time']) . ' IST</p>' .
                                 '    </td>' .
+                                '    <td><span class="qr_code" data-url=' . $row['id'] . '></span></td>' .
                                 '    <td class="text-center">3 / ' . $plane['capacity'] . '</td>' .
                                 '    <td class="text-nowrap">' .
-                                '       <a href="edit?id' . $row['id'] . '" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Edit</a>' .
-                                '       <a href="view?id' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .
+                                '       <a href="edit?id=' . $row['id'] . '" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Edit</a>' .
+                                '       <a href="view?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .
                                 '    </td>' .
                                 '</tr>';
                         }

@@ -13,8 +13,8 @@
                         <th>Id</th>
                         <th>Passenger Name</th>
                         <th>Passport Number</th>
-                        <th>Booking Date</th>
-                        <th>Booking Time</th>
+                        <th>Booking Datetime</th>
+                        <th>QR Code</th>
 
                         <th>Action</th>
                     </thead>
@@ -28,14 +28,14 @@
 
                             echo '' .
                                 '<tr>' .
-                                '<td>' . $row['id'] . '</td>' .
-                                '<td>' . $passenger['first_name'] . ' ' . $passenger['last_name'] . '</td>' .
-                                '<td>' . $passenger['passport_number'] . '</td>' .
-                                '<td>' . $row['booking_date'] . '</td>' .
-                                '<td>' . $row['booking_time'] . '</td>' .
-                                '    <td class="text-nowrap">' .
-                                '       <a href="view?id' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .
-                                '    </td>' .
+                                '   <td>' . $row['id'] . '</td>' .
+                                '   <td>' . $passenger['first_name'] . ' ' . $passenger['last_name'] . '</td>' .
+                                '   <td>' . $passenger['passport_number'] . '</td>' .
+                                '   <td>' . pdate($row['booking_date']) . ' ' . ptime($row['booking_time']) . '</td>' .
+                                '   <td><span class="qr_code" data-url="' . $row['id'] . '"></span></td>' .
+                                '   <td class="text-nowrap">' .
+                                '      <a href="viewticket?id' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View Ticket</a>' .
+                                '   </td>' .
                                 '</tr>';
                         }
                         ?>
