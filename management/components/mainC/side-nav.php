@@ -21,9 +21,9 @@
                         <a class="nav-link" href="">Track Flight Status</a>
                     </nav>
                 </div> -->
-                <a class="nav-link" href="<?php echo $addr_space ?>tickets">
+                <a class="nav-link" href="<?php echo $addr_space ?>flight/list">
                     <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
-                    Tickets
+                    Flights
                 </a>
                 <a class="nav-link" href="<?php echo $addr_space ?>pilot/list">
                     <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
@@ -32,10 +32,6 @@
                 <a class="nav-link" href="<?php echo $addr_space ?>plane/list">
                     <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
                     Planes
-                </a>
-                <a class="nav-link" href="<?php echo $addr_space ?>flight/list">
-                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
-                    Flights
                 </a>
                 <a class="nav-link" href="<?php echo $addr_space ?>luggage">
                     <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>

@@ -9,19 +9,17 @@
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table data-table">
-                    <thead>
+                    <thead class="text-center">
                         <th>Id</th>
                         <th>Plane</th>
-                        <th>Pilot</th>
+                        <th class="text-nowrap">Pilot Name</th>
                         <th>Departure</th>
                         <th>Arrival</th>
-                        <th class="text-nowrap">Departure Date</th>
-                        <th class="text-nowrap">Departure Time</th>
-                        <th class="text-nowrap">Arrival Date</th>
-                        <th class="text-nowrap">Arrival Time</th>
+                        <th class="text-nowrap">Tickets Booked</th>
+
                         <th>Action</th>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center">
                         <?php
 
                         $result = $conn->query("SELECT * FROM flight");
@@ -37,15 +35,20 @@
                                 '    <td>' . $row['id'] . '</td>' .
                                 '    <td>' . $plane['name'] . '</td>' .
                                 '    <td>' . $pilot['name'] . '</td>' .
-                                '    <td>' . $departure['code'] . '</td>' .
-                                '    <td>' . $arrival['code'] . '</td>' .
-                                '    <td>' . pdate($row['departure_date']) . '</td>' .
-                                '    <td>' . ptime($row['departure_time']) . '</td>' .
-                                '    <td>' . pdate($row['arrival_date']) . '</td>' .
-                                '    <td>' . ptime($row['arrival_time']) . '</td>' .
+                                '    <td class="text-center">' .
+                                '       <p class="h3">' . $departure['code'] . '</p>'  .
+                                '       <p class="small">' . $departure['state'] . '</p>'  .
+                                '       <p>' . pdate($row['departure_date']) . ' ' . ptime($row['departure_time']) . ' IST</p>' .
+                                '    </td>' .
+                                '    <td class="text-center">' .
+                                '       <p class="h3">' . $arrival['code'] . '</p>'  .
+                                '       <p class="small">' . $arrival['state'] . '</p>'  .
+                                '       <p>' . pdate($row['arrival_date']) . ' ' . ptime($row['arrival_time']) . ' IST</p>' .
+                                '    </td>' .
+                                '    <td class="text-center">3 / ' . $plane['capacity'] . '</td>' .
                                 '    <td class="text-nowrap">' .
                                 '       <a href="edit?id' . $row['id'] . '" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Edit</a>' .
-                                '       <a href="#" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .
+                                '       <a href="view?id' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .
                                 '    </td>' .
                                 '</tr>';
                         }
