@@ -1,2 +1,5 @@
 <?php
-print_r($_POST);
+
+echo shell_exec('git pull origin master');
+
+// print_r(json_decode($_POST['payload'], true));
