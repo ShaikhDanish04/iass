@@ -6,7 +6,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#customer">
+                <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#customer">
                     <div class="sb-nav-link-icon"><i class="fa fa-user"></i></div>
                     Customer
                     <div class="sb-sidenav-collapse-arrow">
@@ -20,22 +20,22 @@
                         <a class="nav-link" href="">Track Luggage</a>
                         <a class="nav-link" href="">Track Flight Status</a>
                     </nav>
-                </div>
+                </div> -->
+                <a class="nav-link" href="<?php echo $addr_space ?>tickets">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
+                    Tickets
+                </a>
+                <a class="nav-link" href="<?php echo $addr_space ?>pilot/list">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
+                    Pilots
+                </a>
                 <a class="nav-link" href="<?php echo $addr_space ?>plane/list">
                     <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
                     Planes
                 </a>
-                <a class="nav-link" href="<?php echo $addr_space ?>pilot">
-                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
-                    Pilots
-                </a>
-                <a class="nav-link" href="<?php echo $addr_space ?>flight">
+                <a class="nav-link" href="<?php echo $addr_space ?>flight/list">
                     <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
                     Flights
-                </a>
-                <a class="nav-link" href="<?php echo $addr_space ?>tickets">
-                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
-                    Tickets
                 </a>
                 <a class="nav-link" href="<?php echo $addr_space ?>luggage">
                     <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>

@@ -1,6 +1,6 @@
 <nav class="sb-topnav navbar navbar-expand navbar-light">
     <a class="navbar-brand py-0" href="<?php echo $addr_space ?>dashboard">
-    Sattamatka Analysis
+    IASS
     </a>
     <button class="btn btn-link btn-sm ml-auto ml-md-0 order-0 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button><!-- Navbar Search-->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
