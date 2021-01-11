@@ -3,9 +3,9 @@ $response = '';
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
-    $password = sha1($_POST['password']);
+    $password = $_POST['password'];
 
-    $result = $conn->query("SELECT username,admin_access FROM `user_login` WHERE username = '$username' AND `password` = '$password'");
+    $result = $conn->query("SELECT username FROM `management_login` WHERE username = '$username' AND `password` = '$password'");
     echo $conn->error;
     $row = $result->fetch_assoc();
 
@@ -39,7 +39,7 @@ if (isset($_POST['login'])) {
     }
 </style>
 
-<body style="background: linear-gradient(45deg,#9C27B0,#E91E63 )">
+<body style="background: linear-gradient(45deg,#273db0,#1ee9e9 )">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
@@ -69,10 +69,10 @@ if (isset($_POST['login'])) {
                             </form>
                             <div class="d-flex flex-column border-top mt-3 pt-3 align-items-center justify-content-between small">
 
-                                <div class="d-flex align-items-center mb-2">
+                                <!-- <div class="d-flex align-items-center mb-2">
                                     <img class="mr-2" src="https://www.danishshaikh.tech/img/logo.png" height="32px" alt="">
                                     <div class="text-muted">Copyright &copy; Danish Shaikh 2020</div>
-                                </div>
+                                </div> -->
                                 <div>
                                     <a href="#">Privacy Policy</a>
                                     &middot;

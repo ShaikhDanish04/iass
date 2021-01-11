@@ -2,38 +2,44 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-
-
-                <div class="sb-sidenav-menu-heading">Inventroy</div>
-                <a class="nav-link" href="<?php echo $addr_space ?>add-entry/">
-                    <div class="sb-nav-link-icon"><i class="fas fa-plus"></i></div>
-                    Add Entry
+                <a class="nav-link" href="<?php echo $addr_space ?>">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Dashboard
                 </a>
-                <a class="nav-link" href="<?php echo $addr_space ?>list-records/">
-                    <div class="sb-nav-link-icon"><i class="fas fa-list-alt"></i></div>
-                    List Record
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#customer">
+                    <div class="sb-nav-link-icon"><i class="fa fa-user"></i></div>
+                    Customer
+                    <div class="sb-sidenav-collapse-arrow">
+                        <i class="fa fa-chevron-left"></i>
+                    </div>
                 </a>
-                <a class="nav-link" href="<?php echo $addr_space ?>result-analysis/">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-pie"></i></div>
-                    Result Analysis
+                <div class="collapse" id="customer" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="<?php echo $addr_space ?>customer/book_ticket">Book Ticket</a>
+                        <a class="nav-link" href="">List My Tickets</a>
+                        <a class="nav-link" href="">Track Luggage</a>
+                        <a class="nav-link" href="">Track Flight Status</a>
+                    </nav>
+                </div>
+                <a class="nav-link" href="<?php echo $addr_space ?>plane/list">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
+                    Planes
                 </a>
-                <a class="nav-link" href="<?php echo $addr_space ?>cutting/">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-pie"></i></div>
-                    Cutting Check
+                <a class="nav-link" href="<?php echo $addr_space ?>pilot">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
+                    Pilots
                 </a>
-                <!-- <a class="nav-link" href="<?php echo $addr_space ?>cutting-result/">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-pie"></i></div>
-                    Cutting Result
-                </a> -->
-                <a class="nav-link" href="<?php echo $addr_space ?>reset-record/">
-                    <div class="sb-nav-link-icon"><i class="fas fa-trash-alt"></i></div>
-                    Reset Record
+                <a class="nav-link" href="<?php echo $addr_space ?>flight">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
+                    Flights
                 </a>
-
-                <div class="sb-sidenav-menu-heading">Users Management</div>
-                <a class="nav-link" href="<?php echo $addr_space ?>user-accounts/">
-                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                    User Accounts
+                <a class="nav-link" href="<?php echo $addr_space ?>tickets">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
+                    Tickets
+                </a>
+                <a class="nav-link" href="<?php echo $addr_space ?>luggage">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
+                    Luggage
                 </a>
             </div>
         </div>

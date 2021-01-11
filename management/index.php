@@ -12,7 +12,7 @@ if (isset($_GET['url'])) {
     $url_request = '';
 }
 if ($url_request == '') {
-    $url_request = 'add-entry';
+    $url_request = 'dashboard';
 }
 $addr_space = '';
 $url_break = explode('/', $url_request);
@@ -51,25 +51,14 @@ function datetime($datetime)
 
 
 <head>
-    <?php if ($admin_access) { ?>
-        <style>
-            :root {
-                --primay-color: #aa2424;
-                --primay-color-hover: #941f1f;
-                --primay-variant-color: #941f1f;
-                --secondary-color: #ffd200;
-            }
-        </style>
-    <?php } else { ?>
-        <style>
-            :root {
-                --primay-color: #08b25f;
-                --primay-color-hover: #1f945e;
-                --primay-variant-color: #126c6d;
-                --secondary-color: #ffd200;
-            }
-        </style>
-    <?php } ?>
+    <style>
+        :root {
+            --primay-color: #aa2424;
+            --primay-color-hover: #941f1f;
+            --primay-variant-color: #941f1f;
+            --secondary-color: #ffd200;
+        }
+    </style>
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -90,6 +79,17 @@ function datetime($datetime)
             window.history.replaceState(null, null, window.location.href)
         };
     </script>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="<?php echo $addr_space ?>js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="<?php echo $addr_space ?>assets/demo/chart-area-demo.js"></script> -->
+    <!-- <script src="<?php echo $addr_space ?>assets/demo/chart-bar-demo.js"></script> -->
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="<?php echo $addr_space ?>assets/demo/datatables-demo.js"></script> -->
+
 
 </head>
 
@@ -119,7 +119,8 @@ function datetime($datetime)
     }
 
     .sb-sidenav-dark {
-        background: linear-gradient(45deg, var(--primay-color), var(--primay-variant-color));
+        background: linear-gradient(45deg, #2493aa, #1f4d94);
+        /* background: linear-gradient(45deg, var(--primay-color), var(--primay-variant-color)); */
         color: rgba(255, 255, 255, 0.5);
         text-shadow: 0 0 3px;
         box-shadow: 3px 0px 22px rgba(0, 0, 0, 0.25);
@@ -177,7 +178,7 @@ function datetime($datetime)
         text-shadow: 0 0 0;
     }
 
-    /* .bg-primary,
+    .bg-primary,
     .btn-primary {
         border: 0;
         background: linear-gradient(45deg, #003d7c, #007BFB);
@@ -189,6 +190,7 @@ function datetime($datetime)
         background: linear-gradient(45deg, #bc8d00, #ffc107);
     }
 
+
     .bg-success,
     .btn-success {
         border: 0;
@@ -199,7 +201,12 @@ function datetime($datetime)
     .btn-danger {
         border: 0;
         background: linear-gradient(45deg, #7a000c, #dc3545);
-    } */
+    }
+
+    .btn-warning,
+    .btn-warning:hover {
+        color: #fff;
+    }
 
     h1,
     h2,
@@ -248,14 +255,5 @@ if ($admin_logged_in) {
     include('login.php');
 }
 ?>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="<?php echo $addr_space ?>js/scripts.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-<!-- <script src="<?php echo $addr_space ?>assets/demo/chart-area-demo.js"></script> -->
-<!-- <script src="<?php echo $addr_space ?>assets/demo/chart-bar-demo.js"></script> -->
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-<!-- <script src="<?php echo $addr_space ?>assets/demo/datatables-demo.js"></script> -->
 
 </html>
