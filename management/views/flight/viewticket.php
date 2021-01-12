@@ -1,47 +1,83 @@
+<?php
+
+$id = $_GET['id'];
+$ticket = $conn->query("SELECT * FROM ticket WHERE id='$id'")->fetch_assoc();
+
+$flight = $conn->query("SELECT * FROM flight WHERE id ='" . $ticket['flight_id'] . "'")->fetch_assoc();
+$passenger = json_decode($ticket['passenger_details'], true);
+
+$plane = $conn->query("SELECT * FROM plane WHERE id ='" . $flight['plane_id'] . "'")->fetch_assoc();
+
+$departure = $conn->query("SELECT * FROM airports WHERE id='" . $flight['departure_id'] . "'")->fetch_assoc();
+$arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_id'] . "'")->fetch_assoc();
+?>
+<style>
+    label {
+        font-weight: 600;
+    }
+</style>
 <div class="container-fluid">
-    <div class="card mb-3">
-        <div class="card-body">
-            <p class="h3">Passenger Details</p>
-            <div class="row">
-                <div class="col-md-4 form-group">
-                    <label for="">Name of Passenger</label>
-                    <input class="form-control" value="Danish Shaikh" readonly>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="">Date of Birth</label>
-                    <input class="form-control" value="04 Jan 1999" readonly>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="">Gender</label>
-                    <input class="form-control" value="Male" readonly>
-                </div>
-                <div class="col-md-6 form-group">
-                    <label for="">Contact</label>
-                    <input class="form-control" value="8655332519" readonly>
-                </div>
-                <div class="col-md-6 form-group">
-                    <label for="">Email</label>
-                    <input class="form-control" value="shaikh.danish4444@gmail.com" readonly>
+    <div class="card-body border-bottom">
+        <div class="d-flex align-items-center justify-content-between">
+            <button class="btn btn-sm btn-dark" onclick="window.history.back();"><i class="fa fa-chevron-left"></i> Back</button>
+            <p class="h5 m-0 "><i class="fa fa-ticket-alt"></i> Ticket</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <p class="h3">Passenger Details</p>
+                    <hr>
+                    <div class="row p-md-3">
+                        <div class="col-md-4 form-group ">
+                            <label for="">Name of Passenger</label>
+                            <p class="py-1"><?php echo $passenger['name'] ?></p>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label for="">Date of Birth</label>
+                            <p class="py-1"><?php echo $passenger['dob'] ?></p>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label for="">Gender</label>
+                            <p class="py-1"><?php echo $passenger['gender'] ?></p>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="">Contact</label>
+                            <p class="py-1"><?php echo $passenger['contact'] ?></p>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="">Email</label>
+                            <p class="py-1"><?php echo $passenger['email'] ?></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <hr>
-            <p class="h3">Passport Details</p>
-            <div class="row">
-                <div class="col-md-4 form-group">
-                    <label for="">Passport Number</label>
-                    <input class="form-control" value="451313541" readonly>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="">Date of Issue</label>
-                    <input class="form-control" value="15 April 2018" readonly>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="">Date of Expiry</label>
-                    <input class="form-control" value="15 April 2025" readonly>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <p class="h3">Passport Details</p>
+                    <hr>
+                    <div class="row p-md-3">
+                        <div class="col-md-12 form-group">
+                            <label for="">Passport Number</label>
+                            <p class="py-1"><?php echo $ticket['passenger_passport_number'] ?></p>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="">Date of Issue</label>
+                            <p class="py-1"><?php echo $passenger['doi'] ?></p>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="">Date of Expiry</label>
+                            <p class="py-1"><?php echo $passenger['doe'] ?></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="bg-dark" style="overflow-y:scroll">
         <div class="bg-dark py-3 mx-auto" style="overflow:hidden;width:1180px">
             <div class="card mx-auto" style="overflow:hidden;width:1150px">
@@ -50,7 +86,7 @@
                     <div class="col-9 border-right px-0">
                         <div class="rounded card-body text-light" style="background: linear-gradient(45deg, #1e7e34, #4CAF50);">
                             <div class="d-flex align-items-center justify-content-between">
-                                <p class="h1 font-weight-normal">Indigo</p>
+                                <p class="h1 font-weight-normal"><?php echo $plane['name'] ?></p>
                                 <p class="h4 font-weight-light">Boarding Pass</p>
                             </div>
                         </div>
@@ -74,29 +110,29 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="">Passenger Name</label>
-                                                <input class="form-control" value="" readonly>
+                                                <p class="py-1"><?php echo $passenger['name'] ?></p>
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-group">
-                                                <label for="">Date</label>
-                                                <input class="form-control" value="" readonly>
+                                                <label for="">Booking Date</label>
+                                                <p class="py-1"><?php echo $ticket['booking_date'] ?></p>
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-group">
-                                                <label for="">Time</label>
-                                                <input class="form-control" value="" readonly>
+                                                <label for="">Booking Time</label>
+                                                <p class="py-1"><?php echo $ticket['booking_time'] ?></p>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class=" form-group">
                                                 <label for="">From</label>
-                                                <input class="form-control" value="" readonly>
+                                                <p class=><?php echo $departure['code'] . ' - ' . $departure['name'] . ' - ' . $departure['state'] . ', ' . $departure['city'] ?></p>
                                             </div>
                                             <div class=" form-group">
                                                 <label for="">To</label>
-                                                <input class="form-control" value="" readonly>
+                                                <p class=><?php echo $arrival['code'] . ' - ' . $arrival['name'] . ' - ' . $arrival['state'] . ', ' . $arrival['city'] ?></p>
                                             </div>
                                         </div>
                                         <div class="col-6">
@@ -104,26 +140,19 @@
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="">Flight</label>
-                                                        <input class="form-control" value="" readonly>
+                                                        <p class="py-1"><?php echo $plane['name'] ?></p>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="">Seat</label>
-                                                        <input class="form-control" value="" readonly>
+                                                        <p class="py-1"><?php echo $ticket['id'] ?></p>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="">Board Till</label>
-                                                        <div class="row">
-                                                            <div class="col-6">
-                                                                <input class="form-control" value="" readonly>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <input class="form-control" value="" readonly>
-                                                            </div>
-                                                        </div>
+                                                        <p class="py-1"><?php echo $flight['departure_date'] ?> <?php echo $flight['departure_time'] ?></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -149,33 +178,28 @@
                                 <div class="col-12">
                                     <div class="form-group m-1">
                                         <label class="m-0" for="">Passenger Name</label>
-                                        <input class="form-control form-control-sm" value="" readonly>
+                                        <p class="small py-1"><?php echo $passenger['name'] ?></p>
                                     </div>
                                     <div class="form-group m-1">
                                         <label class="m-0" for="">From</label>
-                                        <input class="form-control form-control-sm" value="" readonly>
+                                        <p class="small py-1"><?php echo $departure['code'] . ' - ' . $departure['name'] . ' - ' . $departure['state'] . ', ' . $departure['city'] ?></p>
                                     </div>
                                     <div class="form-group m-1">
                                         <label class="m-0" for="">To</label>
-                                        <input class="form-control form-control-sm" value="" readonly>
+                                        <p class="small py-1"><?php echo $arrival['code'] . ' - ' . $arrival['name'] . ' - ' . $arrival['state'] . ', ' . $arrival['city'] ?></p>
+
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-8">
                                     <div class="form-group m-1">
                                         <label class="m-0" for="">Date</label>
-                                        <input class="form-control form-control-sm" value="" readonly>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="form-group m-1">
-                                        <label class="m-0" for="">Time</label>
-                                        <input class="form-control form-control-sm" value="" readonly>
+                                        <p class="small py-1"><?php echo $ticket['booking_date'] ?> <?php echo $ticket['booking_time'] ?></p>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group m-1">
                                         <label class="m-0" for="">Flight</label>
-                                        <input class="form-control form-control-sm" value="" readonly>
+                                        <p class="small py-1"><?php echo $plane['name'] ?></p>
                                     </div>
                                 </div>
                             </div>

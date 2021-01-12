@@ -30,7 +30,7 @@
                                 '   <td>' . pdate($row['booking_date']) . ' ' . ptime($row['booking_time']) . '</td>' .
                                 '   <td><span class="qr_code" data-url="' . $row['id'] . '"></span></td>' .
                                 '   <td class="text-nowrap">' .
-                                '      <a href="viewticket?id' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View Ticket</a>' .
+                                '      <a href="viewticket?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View Ticket</a>' .
                                 '   </td>' .
                                 '</tr>';
                         }
