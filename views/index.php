@@ -59,25 +59,54 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="tab1Id">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-4 form-group">
-                                <label for="">From</label>
-                                <input type="text" name="" class="form-control">
+                        <form id="search_flight" action="" method="post">
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+                                    <label for="">From</label>
+                                    <select name="departure" class="form-control">
+                                        <option value="">--- Select ---</option>
+                                        <?php $result = $conn->query("SELECT * FROM airports");
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo '<option value="' . $row['id'] . '">' . $row['code'] . ' - ' . $row['name'] . ' - ' . $row['city'] . '</option>';
+                                        } ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 form-group">
+                                    <label for="">To</label>
+                                    <select name="arrival" class="form-control">
+                                        <option value="">--- Select ---</option>
+                                        <?php $result = $conn->query("SELECT * FROM airports");
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo '<option value="' . $row['id'] . '">' . $row['code'] . ' - ' . $row['name'] . ' - ' . $row['city'] . '</option>';
+                                        } ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 form-group">
+                                    <label for="">Departure</label>
+                                    <input type="date" name="date" value="<?php echo date('Y-m-d') ?>" class="form-control">
+                                </div>
                             </div>
-                            <div class="col-md-4 form-group">
-                                <label for="">To</label>
-                                <input type="text" name="" class="form-control">
-                            </div>
-                            <div class="col-md-4 form-group">
-                                <label for="">Departure</label>
-                                <input type="text" name="" class="form-control">
-                            </div>
-                        </div>
-                        <button class="btn btn-dark ml-auto d-block border-0 px-5 py-2" style="border-radius:5rem">
-                            <p class="m-0 h5 font-weight-light"><i class="fa fa-search"></i> Search Flight</p>
-                        </button>
+                            <button class="btn btn-dark ml-auto d-block border-0 px-5 py-2" style="border-radius:5rem">
+                                <p class="m-0 h5 font-weight-light"><i class="fa fa-search"></i> Search Flight</p>
+                            </button>
+                        </form>
                     </div>
+                    <div id="flight_search_response"></div>
                 </div>
+                <script>
+                    $('#search_flight').submit(function(e) {
+                        e.preventDefault();
+
+                        $.ajax({
+                            method: 'POST',
+                            data: $(this).serialize(),
+                            url: 'request/search_flight.php',
+                        }).done(function(response) {
+                            console.log(response)
+                            $('#flight_search_response').html(response)
+                        })
+                    })
+                </script>
                 <div class="tab-pane fade" id="tab2Id">
                     <div class="card-body">
                         <div class="table-responsive rounded">
