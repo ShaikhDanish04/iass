@@ -15,9 +15,16 @@
                 <a class="nav-link" href="#">Contact Us</a>
             </li>
         </ul>
-        <div>
-            <a href="login" class="btn btn-outline-dark">Login</a>
-            <a href="" class="btn btn-dark">Register</a>
-        </div>
+        <?php if (isset($_SESSION['username'])) { ?>
+            <div class="d-flex align-items-center">
+                <p class="h5 font-weight-normal m-0 mr-2"><?php echo $_SESSION['username'] ?></p>
+                <a href="logout" class="btn btn-outline-dark">Logout</a>
+            </div>
+        <?php } else { ?>
+            <div>
+                <a href="login" class="btn btn-outline-dark">Login</a>
+                <a href="" class="btn btn-dark">Register</a>
+            </div>
+        <?php } ?>
     </div>
 </nav>

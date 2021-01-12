@@ -1,7 +1,12 @@
 <?php
+if (isset($_SESSION['username'])) {
+    echo "<script>location.href = 'index';</script>";
+}
+
 $response = '';
 
 if (isset($_POST['register'])) {
+    $username = $_POST['username'];
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
     $password = $_POST['password'];
@@ -14,7 +19,7 @@ if (isset($_POST['register'])) {
             if ($conn->query("SELECT * FROM customer_login WHERE email='$email'")->num_rows > 0) {
                 $response = alert('warning', 'Email Already Register');
             } else {
-                $result = $conn->query("INSERT INTO `customer_login` (`mobile`, `email`, `password`) VALUES ('$mobile', '$email', '$password')");
+                $result = $conn->query("INSERT INTO `customer_login` (`username`,`mobile`, `email`, `password`) VALUES ('$username','$mobile', '$email', '$password')");
 
                 if ($result === TRUE) {
                     $response = alert('success', 'Registration Successfull');
@@ -39,6 +44,11 @@ if (isset($_POST['register'])) {
         <div class="card-body">
             <p class="h2 text-center font-weight-normal mt-4 mb-5">REGISTER</p>
             <form action="" method="post">
+                <div class="form-group">
+                    <label for="">Full Name</label>
+                    <input type="text" name="username" class="form-control" required>
+                    <small class="text-muted">*Enter Your Full Name</small>
+                </div>
                 <div class="form-group">
                     <label for="">Email</label>
                     <input type="email" name="email" class="form-control" required>
