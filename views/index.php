@@ -1,12 +1,5 @@
 <div id="bannerSlider" class="carousel slide shadow" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
-        <!-- <div class="carousel-item">
-            <img width="100%" src="assets/img/bg1.jpg" alt="First slide">
-            <div class="carousel-caption d-none d-md-block text-dark">
-                <h3>Book Your Ticket Now</h3>
-                <p>Online Ticket Booking</p>
-            </div>
-        </div> -->
         <style>
             .carousel-caption {
                 position: absolute;
@@ -28,13 +21,6 @@
                 <p>Book Your Ticket Now</p>
             </div>
         </div>
-        <!-- <div class="carousel-item">
-            <img width="100%" src="assets/img/bg3.jpg" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h3>Book Your Ticket Now</h3>
-                <p>Online Ticket Booking</p>
-            </div>
-        </div> -->
     </div>
 </div>
 
@@ -124,7 +110,7 @@
                                 <tbody class="text-center">
                                     <?php
 
-                                    $result = $conn->query("SELECT * FROM flight ORDER BY id DESC");
+                                    $result = $conn->query("SELECT * FROM flight WHERE departure_date >= '" . date('Y-m-d') . "' ORDER BY id DESC");
                                     $count = 0;
                                     while ($row = $result->fetch_assoc()) {
 

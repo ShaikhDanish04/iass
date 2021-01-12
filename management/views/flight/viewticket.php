@@ -36,7 +36,7 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                         </div>
                         <div class="col-md-4 form-group">
                             <label for="">Date of Birth</label>
-                            <p class="py-1"><?php echo $passenger['dob'] ?></p>
+                            <p class="py-1"><?php echo pdate($passenger['dob']) ?></p>
                         </div>
                         <div class="col-md-4 form-group">
                             <label for="">Gender</label>
@@ -46,7 +46,7 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                             <label for="">Contact</label>
                             <p class="py-1"><?php echo $passenger['contact'] ?></p>
                         </div>
-                        <div class="col-md-4 form-group">
+                        <div class="col-md-8 form-group">
                             <label for="">Email</label>
                             <p class="py-1"><?php echo $passenger['email'] ?></p>
                         </div>
@@ -66,11 +66,11 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="">Date of Issue</label>
-                            <p class="py-1"><?php echo $passenger['doi'] ?></p>
+                            <p class="py-1"><?php echo pdate($passenger['doi']) ?></p>
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="">Date of Expiry</label>
-                            <p class="py-1"><?php echo $passenger['doe'] ?></p>
+                            <p class="py-1"><?php echo pdate($passenger['doe']) ?></p>
                         </div>
                     </div>
                 </div>

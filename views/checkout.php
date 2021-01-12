@@ -28,7 +28,7 @@ if (isset($_POST['checkout'])) {
     $customer_id = $_SESSION['id'];
     $flight_id = $_GET['id'];
     $booking_date = date('Y-m-d');
-    $booking_time = date('H-i-s');
+    $booking_time = date('H:i:s');
     $seat_number = ($ticket['seat_number'] + 1);
 
 

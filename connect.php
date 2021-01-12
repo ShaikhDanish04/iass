@@ -40,5 +40,5 @@ function pdate($datetime)
 }
 function ptime($datetime)
 {
-    return date_format(date_create($datetime), "h:i:s A");
+    return date_format(date_create($datetime), "h:i A");
 }
