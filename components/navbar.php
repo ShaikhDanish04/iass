@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
+<nav class="navbar shadow navbar-expand-sm navbar-light bg-light">
     <a class="navbar-brand" href="#">IASS</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
         <?php } else { ?>
             <div>
                 <a href="login" class="btn btn-outline-dark">Login</a>
-                <a href="" class="btn btn-dark">Register</a>
+                <a href="register" class="btn btn-dark">Register</a>
             </div>
         <?php } ?>
     </div>

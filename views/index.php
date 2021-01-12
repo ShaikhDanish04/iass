@@ -1,9 +1,4 @@
-<div id="bannerSlider" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#bannerSlider" data-slide-to="0" class="active"></li>
-        <li data-target="#bannerSlider" data-slide-to="1"></li>
-        <li data-target="#bannerSlider" data-slide-to="2"></li>
-    </ol>
+<div id="bannerSlider" class="carousel slide shadow" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
         <!-- <div class="carousel-item">
             <img width="100%" src="assets/img/bg1.jpg" alt="First slide">
@@ -13,7 +8,7 @@
             </div>
         </div> -->
         <div class="carousel-item active">
-            <img width="100%" src="assets/img/bg2.jpg" alt="Second slide">
+            <img width="100%" src="assets/img/banner1.jpg" alt="Second slide">
             <div class="carousel-caption d-none d-md-block">
                 <h3>Book Your Ticket Now</h3>
                 <p>Online Ticket Booking</p>
@@ -27,14 +22,6 @@
             </div>
         </div> -->
     </div>
-    <a class="carousel-control-prev" href="#bannerSlider" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#bannerSlider" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
 </div>
 
 <div class="container my-5">
@@ -175,4 +162,8 @@
 
         </div>
     </div>
+    <p class="my-4 display-4">About US</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ipsa tempore temporibus inventore ea quae? Iusto nemo alias esse consequatur neque obcaecati maiores dolore, dignissimos rem consectetur natus dolor eaque!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ipsa tempore temporibus inventore ea quae? Iusto nemo alias esse consequatur neque obcaecati maiores dolore, dignissimos rem consectetur natus dolor eaque!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ipsa tempore temporibus inventore ea quae? Iusto nemo alias esse consequatur neque obcaecati maiores dolore, dignissimos rem consectetur natus dolor eaque!</p>
 </div>

@@ -55,6 +55,8 @@ if (substr($url_request, -1) == '/') {
         require_once('components/404.php');
     }
     ?>
+    <?php include('components/footer.php'); ?>
+
 </body>
 
 <script>
