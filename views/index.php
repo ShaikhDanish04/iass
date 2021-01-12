@@ -26,10 +26,10 @@
 
 <div class="container my-5">
 
-    <div class="card shadow border-0">
-        <div class="card-body border-bottom">
+    <div class="card shadow border-0" style="background: linear-gradient(45deg, #e9e9e9, #f3f3f3);">
+        <div class="card-body">
             <!-- Nav tabs -->
-            <ul class="nav nav-tabs" id="navId">
+            <ul class="nav nav-pills" id="navId">
                 <li class="nav-item">
                     <a data-toggle="tab" href="#tab1Id" class="nav-link active">Book Flight</a>
                 </li>
@@ -37,11 +37,11 @@
                     <a data-toggle="tab" href="#tab2Id" class="nav-link">Available Flights</a>
                 </li>
                 <li class="nav-item">
-                    <a data-toggle="tab" href="#tab2Id" class="nav-link disabled">Flight Status</a>
+                    <a data-table data-toggle="tab" href="#tab2Id" class="nav-link disabled">Flight Status</a>
                 </li>
 
             </ul>
-
+            <hr>
             <!-- Tab panes -->
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="tab1Id">
@@ -49,7 +49,7 @@
                         <form id="search_flight" action="" method="post">
                             <div class="row">
                                 <div class="col-md-4 form-group">
-                                    <label for="">From</label>
+                                    <label class="font-weight-bold" for="">From</label>
                                     <select name="departure" class="form-control">
                                         <option value="">--- Select ---</option>
                                         <?php $result = $conn->query("SELECT * FROM airports");
@@ -59,7 +59,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4 form-group">
-                                    <label for="">To</label>
+                                    <label class="font-weight-bold" for="">To</label>
                                     <select name="arrival" class="form-control">
                                         <option value="">--- Select ---</option>
                                         <?php $result = $conn->query("SELECT * FROM airports");
@@ -69,11 +69,11 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4 form-group">
-                                    <label for="">Departure</label>
+                                    <label class="font-weight-bold" for="">Departure</label>
                                     <input type="date" name="date" value="<?php echo date('Y-m-d') ?>" class="form-control">
                                 </div>
                             </div>
-                            <button class="btn btn-dark ml-auto d-block border-0 px-5 py-2" style="border-radius:5rem">
+                            <button class="btn btn-dark mx-auto my-4 d-block border-0 px-5 py-2" style="border-radius:5rem">
                                 <p class="m-0 h5 font-weight-light"><i class="fa fa-search"></i> Search Flight</p>
                             </button>
                         </form>
@@ -96,9 +96,9 @@
                 </script>
                 <div class="tab-pane fade" id="tab2Id">
                     <div class="card-body">
-                        <div class="table-responsive rounded">
-                            <table class="table table-bordered shadow">
-                                <thead class="text-center thead-dark">
+                        <div class="table-responsive">
+                            <table class="table data-table">
+                                <thead class="text-center">
                                     <th>Sr No</th>
                                     <th>From</th>
                                     <th>To</th>
@@ -153,13 +153,14 @@
                                 </tbody>
                             </table>
                         </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="tab3Id">
                     </div>
                 </div>
-                <div class="tab-pane fade" id="tab3Id">
-                </div>
+
+
             </div>
-
-
         </div>
     </div>
     <p class="my-4 display-4">About US</p>
