@@ -7,11 +7,25 @@
                 <p>Online Ticket Booking</p>
             </div>
         </div> -->
+        <style>
+            .carousel-caption {
+                position: absolute;
+                right: unset;
+                bottom: unset;
+                top: 40%;
+                left: 5%;
+                z-index: 10;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                color: #fff;
+                text-align: left;
+            }
+        </style>
         <div class="carousel-item active">
             <img width="100%" src="assets/img/banner1.jpg" alt="Second slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h3>Book Your Ticket Now</h3>
-                <p>Online Ticket Booking</p>
+            <div class="carousel-caption text-dark d-none d-md-block">
+                <h3>Intelligent Automated Security System</h3>
+                <p>Book Your Ticket Now</p>
             </div>
         </div>
         <!-- <div class="carousel-item">
@@ -29,7 +43,7 @@
     <div class="card shadow border-0">
         <div class="card-body border-bottom">
             <!-- Nav tabs -->
-            <ul class="nav nav-pills" id="navId">
+            <ul class="nav nav-tabs" id="navId">
                 <li class="nav-item">
                     <a data-toggle="tab" href="#tab1Id" class="nav-link active">Book Flight</a>
                 </li>
@@ -163,7 +177,7 @@
         </div>
     </div>
     <p class="my-4 display-4">About US</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ipsa tempore temporibus inventore ea quae? Iusto nemo alias esse consequatur neque obcaecati maiores dolore, dignissimos rem consectetur natus dolor eaque!</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ipsa tempore temporibus inventore ea quae? Iusto nemo alias esse consequatur neque obcaecati maiores dolore, dignissimos rem consectetur natus dolor eaque!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ipsa tempore temporibus inventore ea quae? Iusto nemo alias esse consequatur neque obcaecati maiores dolore, dignissimos rem consectetur natus dolor eaque!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ipsa tempore temporibus inventore ea quae? Iusto nemo alias esse consequatur neque obcaecati maiores dolore, dignissimos rem consectetur natus dolor eaque!</p>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ipsa tempore temporibus inventore ea quae? Iusto nemo alias esse consequatur neque obcaecati maiores dolore, dignissimos rem consectetur natus dolor eaque!</p>
 </div>
