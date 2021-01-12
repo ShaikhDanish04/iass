@@ -42,11 +42,11 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                             <label for="">Gender</label>
                             <p class="py-1"><?php echo $passenger['gender'] ?></p>
                         </div>
-                        <div class="col-md-6 form-group">
+                        <div class="col-md-4 form-group">
                             <label for="">Contact</label>
                             <p class="py-1"><?php echo $passenger['contact'] ?></p>
                         </div>
-                        <div class="col-md-6 form-group">
+                        <div class="col-md-4 form-group">
                             <label for="">Email</label>
                             <p class="py-1"><?php echo $passenger['email'] ?></p>
                         </div>
@@ -116,13 +116,13 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label for="">Booking Date</label>
-                                                <p class="py-1"><?php echo date_format(date_create($ticket['booking_date']), 'd M Y') ?></p>
+                                                <p class="py-1"><?php echo pdate($ticket['booking_date']) ?></p>
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label for="">Booking Time</label>
-                                                <p class="py-1"><?php echo date_format(date_create($ticket['booking_time']), 'h:i A') ?></p>
+                                                <p class="py-1"><?php echo ptime($ticket['booking_time']) ?></p>
                                             </div>
                                         </div>
                                         <div class="col-6">
@@ -152,7 +152,7 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="">Board Till</label>
-                                                        <p class="py-1"><?php echo date_format(date_create($flight['departure_date']), 'd M Y') ?> <?php echo date_format(date_create($flight['departure_time']), 'h:i A') ?></p>
+                                                        <p class="py-1"><?php echo pdate($flight['departure_date']) ?> <?php echo ptime($flight['departure_time']) ?></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -193,7 +193,7 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                                 <div class="col-8">
                                     <div class="form-group m-1">
                                         <label class="m-0" for="">Booking Date</label>
-                                        <p class="small py-1"><?php echo date_format(date_create($ticket['booking_date']), 'd M Y') ?> <?php echo date_format(date_create($ticket['booking_time']), 'h:i A') ?></p>
+                                        <p class="small py-1"><?php echo pdate($ticket['booking_date']) ?> <?php echo ptime($ticket['booking_time']) ?></p>
                                     </div>
                                 </div>
                                 <div class="col-4">
