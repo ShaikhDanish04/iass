@@ -116,13 +116,13 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label for="">Booking Date</label>
-                                                <p class="py-1"><?php echo $ticket['booking_date'] ?></p>
+                                                <p class="py-1"><?php echo date_format(date_create($ticket['booking_date']), 'd M Y') ?></p>
                                             </div>
                                         </div>
                                         <div class="col-3">
                                             <div class="form-group">
                                                 <label for="">Booking Time</label>
-                                                <p class="py-1"><?php echo $ticket['booking_time'] ?></p>
+                                                <p class="py-1"><?php echo date_format(date_create($ticket['booking_time']), 'h:i A') ?></p>
                                             </div>
                                         </div>
                                         <div class="col-6">
@@ -152,7 +152,7 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="">Board Till</label>
-                                                        <p class="py-1"><?php echo $flight['departure_date'] ?> <?php echo $flight['departure_time'] ?></p>
+                                                        <p class="py-1"><?php echo date_format(date_create($flight['departure_date']), 'd M Y') ?> <?php echo date_format(date_create($flight['departure_time']), 'h:i A') ?></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -192,8 +192,8 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                                 </div>
                                 <div class="col-8">
                                     <div class="form-group m-1">
-                                        <label class="m-0" for="">Date</label>
-                                        <p class="small py-1"><?php echo $ticket['booking_date'] ?> <?php echo $ticket['booking_time'] ?></p>
+                                        <label class="m-0" for="">Booking Date</label>
+                                        <p class="small py-1"><?php echo date_format(date_create($ticket['booking_date']), 'd M Y') ?> <?php echo date_format(date_create($ticket['booking_time']), 'h:i A') ?></p>
                                     </div>
                                 </div>
                                 <div class="col-4">
