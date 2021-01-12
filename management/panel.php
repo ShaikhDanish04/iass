@@ -37,10 +37,20 @@
     $(document).ready(function() {
         $('.data-table').DataTable();
         $('.qr_code').each(function() {
+
+            height = 64;
+            width = 64;
+
+            if ($(this).attr('data-height') != null) {
+                height = $(this).attr('data-height');
+            }
+            if ($(this).attr('data-width') != null) {
+                width = $(this).attr('data-width');
+            }
             $(this).qrcode({
                 text: $(this).attr('data-url'),
-                width: 64,
-                height: 64
+                width: width,
+                height: height
             });
         })
     });

@@ -49,8 +49,7 @@
                                 '    <td><span class="qr_code" data-url=' . $row['id'] . '></span></td>' .
                                 '    <td class="text-center">3 / ' . $plane['capacity'] . '</td>' .
                                 '    <td class="text-nowrap">' .
-                                '       <a href="edit?id=' . $row['id'] . '" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Edit</a>' .
-                                '       <a href="view?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .
+                                '       <a href="tickets?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .
                                 '    </td>' .
                                 '</tr>';
                         }

@@ -11,7 +11,6 @@
                 <table class="table data-table">
                     <thead class="text-center">
                         <th>Id</th>
-                        <th>Passenger Name</th>
                         <th>Passport Number</th>
                         <th>Booking Datetime</th>
                         <th>QR Code</th>
@@ -24,13 +23,10 @@
                         $result = $conn->query("SELECT * FROM ticket");
                         while ($row = $result->fetch_assoc()) {
 
-                            $passenger = $conn->query("SELECT * FROM passenger WHERE id='" . $row['passenger_id'] . "'")->fetch_assoc();
-
                             echo '' .
                                 '<tr>' .
                                 '   <td>' . $row['id'] . '</td>' .
-                                '   <td>' . $passenger['first_name'] . ' ' . $passenger['last_name'] . '</td>' .
-                                '   <td>' . $passenger['passport_number'] . '</td>' .
+                                '   <td>' . $row['passenger_passport_number'] . '</td>' .
                                 '   <td>' . pdate($row['booking_date']) . ' ' . ptime($row['booking_time']) . '</td>' .
                                 '   <td><span class="qr_code" data-url="' . $row['id'] . '"></span></td>' .
                                 '   <td class="text-nowrap">' .
