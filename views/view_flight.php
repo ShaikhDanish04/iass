@@ -59,7 +59,7 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                 </li>
             </ul>
             <hr>
-            <button class="btn btn-primary w-100 py-3" style="border-radius:5rem"><i class="fa fa-ticket-alt"></i> Book Flight</button>
+            <a href="checkout?id=<?php echo $flight['id'] ?>" class="btn btn-primary w-100 py-3" style="border-radius:5rem"><i class="fa fa-ticket-alt"></i> Book Flight</a>
 
         </div>
     </div>

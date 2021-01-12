@@ -9,11 +9,12 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $result = $conn->query("SELECT mobile,email,username FROM `customer_login` WHERE (email = '$username' OR mobile = '$username') AND `password` = '$password'");
+    $result = $conn->query("SELECT id,mobile,email,username FROM `customer_login` WHERE (email = '$username' OR mobile = '$username') AND `password` = '$password'");
     // echo $conn->error;
     $row = $result->fetch_assoc();
 
     if ($result->num_rows == 1) {
+        $_SESSION['id'] = $row['id'];
         $_SESSION['username'] = $row['username'];
         $_SESSION['mobile'] = $row['mobile'];
         $_SESSION['email'] = $row['email'];
