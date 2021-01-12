@@ -16,8 +16,8 @@
             </li>
         </ul>
         <div>
-            <button class="btn btn-outline-dark">Login</button>
-            <button class="btn btn-dark">Register</button>
+            <a href="login" class="btn btn-outline-dark">Login</a>
+            <a href="" class="btn btn-dark">Register</a>
         </div>
     </div>
 </nav>
