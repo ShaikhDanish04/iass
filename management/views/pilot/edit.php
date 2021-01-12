@@ -15,7 +15,7 @@ if (isset($_POST['update'])) {
     $result = $conn->query("UPDATE `pilot` SET `name`='$name',`contact`='$contact',`address` = '$address' WHERE `id` = '$id'");
 
     if ($result === TRUE) {
-        $repsonse = alert('success', 'Pilot Details Updatd Successfully');
+        $repsonse = alert('success', 'Pilot d Updatd Successfully');
     } else {
         $repsonse = alert('danger', 'Failed !!! Try Again');
     }

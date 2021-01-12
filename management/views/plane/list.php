@@ -25,7 +25,7 @@
                                 '    <td>' . $row['id'] . '</td>' .
                                 '    <td>' . $row['name'] . '</td>' .
                                 '    <td>' . $row['capacity'] . '</td>' .
-                                '    <td><a href="edit?id' . $row['id'] . '" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Edit</a></td>' .
+                                '    <td><a href="edit?id=' . $row['id'] . '" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Edit</a></td>' .
                                 '</tr>';
                         }
                         ?>
