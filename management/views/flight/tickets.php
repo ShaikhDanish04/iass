@@ -2,7 +2,7 @@
     <div class="card mb-4">
         <div class="card-body border-bottom">
             <div class="d-flex align-items-center justify-content-between">
-                <a class="btn btn-sm btn-dark" href="list"><i class="fa fa-chevron-left"></i> Back</a>
+                <button class="btn btn-sm btn-dark" onclick="window.history.back();"><i class="fa fa-chevron-left"></i> Back</button>
                 <p class="h5 m-0 "><i class="fa fa-list-alt"></i> List Tickets</p>
             </div>
         </div>

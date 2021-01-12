@@ -17,8 +17,16 @@
         </ul>
         <?php if (isset($_SESSION['username'])) { ?>
             <div class="d-flex align-items-center">
-                <p class="h5 font-weight-normal m-0 mr-2"><?php echo $_SESSION['username'] ?></p>
-                <a href="logout" class="btn btn-outline-dark">Logout</a>
+                <!-- <p class="h5 font-weight-normal m-0 mr-2"></p> -->
+                <div class="dropdown open">
+                    <button class="btn btn-outline-dark dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <?php echo $_SESSION['username'] ?>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="triggerId">
+                        <a href="my_account" class="dropdown-item"><i class="fa fa-user"></i> My Account</a>
+                        <a href="logout" class="dropdown-item"><i class="fa fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
             </div>
         <?php } else { ?>
             <div>
