@@ -3,6 +3,7 @@
 include('../connect.php');
 $departure = $_POST['departure'];
 $arrival = $_POST['arrival'];
+$date = $_POST['date'];
 
 if (empty($departure) || empty($arrival) || empty($arrival)) {
     echo '<p class="text-center h1 font-weight-light my-5">Please Select Proper Options</p>';
@@ -58,11 +59,10 @@ if ($departure == $arrival) {
                             '    </td>' .
                             '    <td class="text-center">3 / ' . $plane['capacity'] . '</td>' .
                             '    <td class="text-nowrap">' .
-                            '       <p>Economy Class - ₹' . $row['economy_fare'] . '</p>' .
-                            '       <p>Business Class - ₹' . $row['business_fare'] . '</p>' .
+                            '       <p>₹' . $row['economy_fare'] . '</p>' .
                             '    </td>' .
                             '    <td class="text-nowrap">' .
-                            '       <a href="book?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .
+                            '       <a target="blank" href="view_flight?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-plane"></i> View</a>' .
                             '    </td>' .
                             '</tr>';
                     }
