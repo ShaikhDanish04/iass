@@ -33,6 +33,7 @@
                             $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $row['arrival_id'] . "'")->fetch_assoc();
 
                             $ticket = $conn->query("SELECT * FROM ticket WHERE flight_id='" . $row['id'] . "' ORDER BY seat_number DESC LIMIT 1")->fetch_assoc();
+                            $ticket = ($ticket > 0) ?  $ticket : '0';
                             echo '' .
                                 '<tr>' .
                                 '    <td>' . $row['id'] . '</td>' .

@@ -23,16 +23,16 @@
         <div class="col-xl-3 col-6">
             <div class="card bg-success text-white mb-4">
                 <div class="card-body text-center">
-                    <p class="h3"><?php echo $conn->query("SELECT * FROM passenger ")->num_rows ?></p>
-                    <p class="m-0">Passenger Onboard</p>
+                    <p class="h3"><?php echo $conn->query("SELECT * FROM pilot ")->num_rows ?></p>
+                    <p class="m-0">Pilot Onboard</p>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-6">
             <div class="card bg-danger text-white mb-4">
                 <div class="card-body text-center">
-                    <p class="h3"><?php echo $conn->query("SELECT * FROM luggage ")->num_rows ?></p>
-                    <p class="m-0">Luggage In</p>
+                    <p class="h3"><?php echo $conn->query("SELECT * FROM plane ")->num_rows ?></p>
+                    <p class="m-0">Plane Available</p>
                 </div>
             </div>
         </div>
@@ -84,6 +84,8 @@
                             $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $row['arrival_id'] . "'")->fetch_assoc();
 
                             $ticket = $conn->query("SELECT * FROM ticket WHERE flight_id='" . $row['id'] . "' ORDER BY seat_number DESC LIMIT 1")->fetch_assoc();
+                            $ticket = ($ticket > 0) ?  $ticket : '0';
+
 
                             echo '' .
                                 '<tr>' .

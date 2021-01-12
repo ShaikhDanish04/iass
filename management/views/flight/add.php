@@ -29,7 +29,7 @@ if (isset($_POST['add'])) {
     <div class="card mb-4">
         <div class="card-body border-bottom">
             <div class="d-flex align-items-center justify-content-between">
-                <button class="btn btn-sm btn-dark" onclick="window.history.back();"><i class="fa fa-chevron-left"></i> Back</button>
+                <a class="btn btn-sm btn-dark" href="list"><i class="fa fa-chevron-left"></i> Back</a>
                 <p class="h5 m-0 "> <i class="fa fa-plus"></i> Add Flight</p>
             </div>
         </div>

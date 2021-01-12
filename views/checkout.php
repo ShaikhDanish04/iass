@@ -19,17 +19,17 @@ $departure = $conn->query("SELECT * FROM airports WHERE id='" . $flight['departu
 $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_id'] . "'")->fetch_assoc();
 
 $ticket = $conn->query("SELECT * FROM ticket WHERE flight_id='$id' ORDER BY seat_number DESC LIMIT 1")->fetch_assoc();
+$ticket = ($ticket > 0) ?  $ticket : '0';
 
 
 if (isset($_POST['checkout'])) {
-    echo $passenger = json_encode($_POST['passenger']);
-    echo $passenger_passport_number = $_POST['passenger_passport_number'];
-    echo $customer_id = $_SESSION['id'];
-    echo $flight_id = $_GET['id'];
-    echo $booking_date = date('Y-m-d');
-    echo $booking_time = date('H-i-s');
-
-    echo $seat_number = ($ticket['seat_number'] + 1);
+    $passenger = json_encode($_POST['passenger']);
+    $passenger_passport_number = $_POST['passenger_passport_number'];
+    $customer_id = $_SESSION['id'];
+    $flight_id = $_GET['id'];
+    $booking_date = date('Y-m-d');
+    $booking_time = date('H-i-s');
+    $seat_number = ($ticket['seat_number'] + 1);
 
 
     if ($plane['capacity'] == $seat_number) {
