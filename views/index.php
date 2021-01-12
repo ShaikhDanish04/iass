@@ -123,7 +123,8 @@
                                 <tbody class="text-center">
                                     <?php
 
-                                    $result = $conn->query("SELECT * FROM flight");
+                                    $result = $conn->query("SELECT * FROM flight ORDER BY id DESC");
+                                    $count = 0;
                                     while ($row = $result->fetch_assoc()) {
 
                                         $plane = $conn->query("SELECT * FROM plane WHERE id='" . $row['plane_id'] . "'")->fetch_assoc();
@@ -131,9 +132,14 @@
 
                                         $departure = $conn->query("SELECT * FROM airports WHERE id='" . $row['departure_id'] . "'")->fetch_assoc();
                                         $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $row['arrival_id'] . "'")->fetch_assoc();
+
+                                        $ticket = $conn->query("SELECT * FROM ticket WHERE flight_id='" . $row['id'] . "' ORDER BY seat_number DESC LIMIT 1")->fetch_assoc();
+                                        if (!($ticket > 0)) $ticket['seat_number'] = 0;
+
+                                        $count++;
                                         echo '' .
                                             '<tr>' .
-                                            '    <td>' . $row['id'] . '</td>' .
+                                            '    <td>' . $count . '</td>' .
                                             '    <td class="text-center">' .
                                             '       <p class=" m-0">' . $departure['city'] . '</p>'  .
                                             '       <p class="h3">' . $departure['code'] . '</p>'  .
@@ -147,7 +153,7 @@
                                             '    <td> ' .
                                             '       <p>' . date_format(date_create($row['departure_time']), 'h:i A') . ' - ' . date_format(date_create($row['arrival_time']), 'h:i A') . '</p>' .
                                             '    </td>' .
-                                            '    <td class="text-center">3 / ' . $plane['capacity'] . '</td>' .
+                                            '    <td class="text-center">' . ($plane['capacity'] - $ticket['seat_number']) . ' / ' . $plane['capacity'] . '</td>' .
                                             '    <td class="text-nowrap">' .
                                             '       <p>₹' . $row['economy_fare'] . '</p>' .
                                             '    </td>' .

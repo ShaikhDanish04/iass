@@ -84,7 +84,7 @@
                             $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $row['arrival_id'] . "'")->fetch_assoc();
 
                             $ticket = $conn->query("SELECT * FROM ticket WHERE flight_id='" . $row['id'] . "' ORDER BY seat_number DESC LIMIT 1")->fetch_assoc();
-                            $ticket = ($ticket > 0) ?  $ticket : '0';
+                            if (!($ticket > 0)) $ticket['seat_number'] = 0;
 
 
                             echo '' .
@@ -103,7 +103,7 @@
                                 '       <p>' . pdate($row['arrival_date']) . ' ' . ptime($row['arrival_time']) . ' IST</p>' .
                                 '    </td>' .
                                 '    <td><span class="qr_code" data-url=' . $row['id'] . '></span></td>' .
-                                '    <td class="text-center"> ' . $ticket['seat_number'] . ' / ' . $plane['capacity'] . '</td>' .
+                                '    <td class="text-center"> ' . ($plane['capacity'] - $ticket['seat_number']) . ' / ' . $plane['capacity'] . '</td>' .
                                 '    <td class="text-nowrap">' .
                                 // '       <a href="edit?id=' . $row['id'] . '" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Edit</a>' .
                                 '       <a href="flight/tickets?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .

@@ -19,7 +19,7 @@ $departure = $conn->query("SELECT * FROM airports WHERE id='" . $flight['departu
 $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_id'] . "'")->fetch_assoc();
 
 $ticket = $conn->query("SELECT * FROM ticket WHERE flight_id='$id' ORDER BY seat_number DESC LIMIT 1")->fetch_assoc();
-$ticket = ($ticket > 0) ?  $ticket : '0';
+if (!($ticket > 0)) $ticket['seat_number'] = 0;
 
 
 if (isset($_POST['checkout'])) {
@@ -45,6 +45,9 @@ if (isset($_POST['checkout'])) {
         }
     }
 }
+$ticket = $conn->query("SELECT * FROM ticket WHERE flight_id='$id' ORDER BY seat_number DESC LIMIT 1")->fetch_assoc();
+if (!($ticket > 0)) $ticket['seat_number'] = 0;
+
 ?>
 
 <div class="container my-3">

@@ -1,3 +1,5 @@
+<?php $id = $_GET['id'] ?>
+
 <div class="container-fluid">
     <div class="card mb-4">
         <div class="card-body border-bottom">
@@ -10,7 +12,7 @@
             <div class="table-responsive">
                 <table class="table data-table">
                     <thead class="text-center">
-                        <th>Id</th>
+                        <th>Sr No.</th>
                         <th>Customer</th>
                         <th>Passport Number</th>
                         <th>Booking Datetime</th>
@@ -21,13 +23,15 @@
                     <tbody class="text-center">
                         <?php
 
-                        $result = $conn->query("SELECT * FROM ticket");
+                        $result = $conn->query("SELECT * FROM ticket WHERE flight_id='$id' ORDER BY id DESC");
+                        $count = 0;
                         while ($row = $result->fetch_assoc()) {
                             $customer = $conn->query("SELECT * FROM customer_login WHERE id='" . $row['customer_id'] . "'")->fetch_assoc();
 
+                            $count++;
                             echo '' .
                                 '<tr>' .
-                                '   <td>' . $row['id'] . '</td>' .
+                                '   <td>' . $count . '</td>' .
                                 '   <td>' . $customer['username'] . '</td>' .
                                 '   <td>' . $row['passenger_passport_number'] . '</td>' .
                                 '   <td>' . pdate($row['booking_date']) . ' ' . ptime($row['booking_time']) . '</td>' .
