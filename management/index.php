@@ -217,18 +217,23 @@ function datetime($datetime)
     }
 
     .sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-nested {
-        margin: 0;
+        margin: .5rem;
+        border-radius: 1em;
+        overflow: hidden;
+        background-color: #fff;
     }
 
-    .sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-nested a::before {
-        content: "";
-        width: 10px;
-        display: inline-block;
-        height: 10px;
-        border-radius: 5rem;
-        box-shadow: 0 0 5px;
-        margin-right: 10px;
-        background: transparent;
+    .sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-nested .nav-link {
+        color: #000;
+        text-shadow: none;
+        font-size: 12px;
+    }
+
+
+    .sb-sidenav-dark .sb-sidenav-menu .nav .sb-sidenav-menu-nested .nav-link .sb-nav-link-icon {
+        color: #000 !important;
+        font-size: 12px;
+
     }
 </style>
 

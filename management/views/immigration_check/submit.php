@@ -9,8 +9,10 @@ if (isset($_POST['submit'])) {
 
     $departure_id = $flight['departure_id'];
     $passport_number =  $ticket['passenger_passport_number'];
+    $datetime = date("Y-m-d H:i:s");
 
-    $conn->query("INSERT INTO `immigration` (`passport_number`, `location`) VALUES ('$passport_number', '$departure_id')");
+
+    $conn->query("INSERT INTO `immigration` (`passport_number`, `location`,`datetime`) VALUES ('$passport_number', '$departure_id','$datetime')");
 
     $conn->query("UPDATE `ticket` SET `stage` = 'boarding' WHERE `id` = '$id'");
 }
