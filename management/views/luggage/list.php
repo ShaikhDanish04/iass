@@ -8,10 +8,13 @@
             <div class="rounded mb-3 bg-light video-container">
                 <video class="" height="300" width="300" id="preview" style="object-fit: cover;"></video>
             </div>
-            <div class="cameras btn-group">
+            <div class="cameras btn-group mb-3">
                 <!-- <button class="btn btn-primary start">Start</button> -->
                 <button class="btn btn-danger stop">Stop</button>
                 <button class="btn btn-dark mirror">Mirror</button>
+            </div>
+            <div>
+                <button class="btn btn-success scan">Scan</button>
             </div>
         </div>
     </div>
@@ -22,9 +25,21 @@
         video: document.getElementById('preview'),
     });
     // console.log(scanner);
-    scanner.addListener('scan', function(content) {
-        alert(content);
-    });
+    // scanner.addListener('scan', function(content) {
+    //     alert(content);
+    // });
+
+    $('.scan').click(function() {
+        let result = scanner.scan()
+
+        if (result != null) {
+            alert(result.content);
+        } else {
+            alert('No QR Found');
+        }
+    })
+
+
     Instascan.Camera.getCameras().then(function(cameras) {
         if (cameras.length > 0) {
             for (i = 0; i < cameras.length; i++) {
