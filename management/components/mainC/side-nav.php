@@ -33,7 +33,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
                     Planes
                 </a>
-                <a class="nav-link" href="<?php echo $addr_space ?>luggage">
+                <a class="nav-link" href="<?php echo $addr_space ?>luggage/list">
                     <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
                     Luggage
                 </a>
