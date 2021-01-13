@@ -1,5 +1,5 @@
 <div class="container">
-    <p class="h3 my-4 text-center">Customer Check-In</p>
+    <p class="h3 my-4 text-center">Boarding Check</p>
     <hr>
     <div class=" mt-4 d-flex justify-content-center">
         <?php

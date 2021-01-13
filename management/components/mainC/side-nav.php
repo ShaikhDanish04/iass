@@ -53,6 +53,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
                     Immigration Check
                 </a>
+                <a class="nav-link" href="<?php echo $addr_space ?>boarding/scan">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
+                    Boarding Check
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">
