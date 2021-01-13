@@ -74,6 +74,7 @@
                     <tbody class="text-center">
                         <?php
 
+                        $count = 0;
                         $result = $conn->query("SELECT * FROM flight ORDER BY id desc");
                         while ($row = $result->fetch_assoc()) {
 
@@ -89,7 +90,7 @@
 
                             echo '' .
                                 '<tr>' .
-                                '    <td>' . $row['id'] . '</td>' .
+                                '    <td>' . ++$count . '</td>' .
                                 '    <td>' . $plane['name'] . '</td>' .
                                 '    <td>' . $pilot['name'] . '</td>' .
                                 '    <td class="text-center">' .
@@ -103,7 +104,7 @@
                                 '       <p>' . pdate($row['arrival_date']) . ' ' . ptime($row['arrival_time']) . ' IST</p>' .
                                 '    </td>' .
                                 '    <td><span class="qr_code" data-url=' . $row['id'] . '></span></td>' .
-                                '    <td class="text-center"> ' . ($plane['capacity'] - $ticket['seat_number']) . ' / ' . $plane['capacity'] . '</td>' .
+                                '    <td class="text-center">' .  $ticket['seat_number'] . ' / ' . $plane['capacity'] . '</td>' .
                                 '    <td class="text-nowrap">' .
                                 // '       <a href="edit?id=' . $row['id'] . '" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Edit</a>' .
                                 '       <a href="flight/tickets?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .
