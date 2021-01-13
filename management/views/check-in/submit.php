@@ -4,7 +4,7 @@ $id = $_GET['id'];
 
 if (isset($_POST['submit'])) {
     if ($_POST['submit'] == 'accept') {
-        $conn->query("UPDATE `ticket` SET `stage` = 'baggage_check-in' WHERE `id` = '$id'");
+        $conn->query("UPDATE `ticket` SET `stage` = 'luggage_check-in' WHERE `id` = '$id'");
     } else if ($_POST['submit'] == 'reject') {
         $conn->query("UPDATE `ticket` SET `stage` = 'rejected_check-in' WHERE `id` = '$id'");
     }

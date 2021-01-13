@@ -41,6 +41,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
                     Check-In
                 </a>
+                <a class="nav-link" href="<?php echo $addr_space ?>luggage_check-in/scan">
+                    <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
+                    Luggage Check-In
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">

@@ -48,8 +48,8 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                 </div>
             </div>
 
-            <p><i class=""></i>Check-in Baggage:<strong class="font-weight-bold">&nbsp;15kg</strong></span><span><strong class="font-weight-bold"> per person</strong>&nbsp;(1 piece only). For Double or MultiSeats bookings, extra 10 kg. Additional charges may apply for excess baggage.</p>
-            <p class="baggage-students">Hand Baggage &nbsp;:&nbsp;<strong class="font-weight-bold">One hand bag up to 7 kgs and 115 cms, shall be allowed per customer.</strong>&nbsp;For contactless travel we recommend to place it under the seat in front, on board.</p>
+            <p><i class=""></i>Check-in Luggage:<strong class="font-weight-bold">&nbsp;15kg</strong></span><span><strong class="font-weight-bold"> per person</strong>&nbsp;(1 piece only). For Double or MultiSeats bookings, extra 10 kg. Additional charges may apply for excess luggage.</p>
+            <p class="luggage-students">Hand Luggage &nbsp;:&nbsp;<strong class="font-weight-bold">One hand bag up to 7 kgs and 115 cms, shall be allowed per customer.</strong>&nbsp;For contactless travel we recommend to place it under the seat in front, on board.</p>
 
             <hr>
             <ul class="list-unstyled priceBreakup">
