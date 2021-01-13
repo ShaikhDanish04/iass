@@ -6,7 +6,7 @@
         <div class="card-body text-center">
             <p class="h3">QR Code Scanner</p>
             <div class="rounded mb-3 bg-light video-container">
-                <video class="" height="300" width="300" id="preview"></video>
+                <video class="" height="300" width="300" id="preview" style="object-fit: cover;"></video>
             </div>
             <div class="cameras btn-group">
                 <!-- <button class="btn btn-primary start">Start</button> -->
@@ -20,9 +20,8 @@
 <script type="text/javascript">
     let scanner = new Instascan.Scanner({
         video: document.getElementById('preview'),
-        fsm: true
     });
-    console.log(scanner);
+    // console.log(scanner);
     scanner.addListener('scan', function(content) {
         alert(content);
     });
@@ -38,6 +37,7 @@
     }).catch(function(e) {
         console.error(e);
     });
+
     $(document).on('click', '.start', function() {
         scanner.start($(this).data('id'));
     })
@@ -45,6 +45,7 @@
     $('.stop').click(function() {
         scanner.stop();
     })
+
     $('.mirror').click(function() {
         if (scanner.mirror) {
             scanner.mirror = false;
