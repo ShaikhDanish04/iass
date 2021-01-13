@@ -52,6 +52,7 @@
                                         <th>Customer</th>
                                         <th>Passport Number</th>
                                         <th>Booking Datetime</th>
+                                        <th>Luggage Stage</th>
                                         <th>QR Code</th>
 
                                         <th>Action</th>
@@ -64,7 +65,9 @@
                                         $count = 0;
                                         while ($row = $result->fetch_assoc()) {
                                             $customer = $conn->query("SELECT * FROM customer_login WHERE id='" . $row['customer_id'] . "'")->fetch_assoc();
+                                            $luggage = $conn->query("SELECT * FROM luggage WHERE ticket_id='" . $row['id'] . "'")->fetch_assoc();
 
+                                            if ($luggage == '') $luggage['status'] = 'No Luggage';
                                             $count++;
                                             echo '' .
                                                 '<tr>' .
@@ -72,6 +75,7 @@
                                                 '   <td>' . $customer['username'] . '</td>' .
                                                 '   <td>' . $row['passenger_passport_number'] . '</td>' .
                                                 '   <td>' . pdate($row['booking_date']) . ' ' . ptime($row['booking_time']) . '</td>' .
+                                                '   <td>' . $luggage['status'] . '</td>' .
                                                 '   <td><span class="qr_code" data-url="' . $row['id'] . '"></span></td>' .
                                                 '   <td class="text-nowrap">' .
                                                 '      <a href="viewticket?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View Ticket</a>' .

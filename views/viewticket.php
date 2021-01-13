@@ -10,6 +10,10 @@ $plane = $conn->query("SELECT * FROM plane WHERE id ='" . $flight['plane_id'] . 
 
 $departure = $conn->query("SELECT * FROM airports WHERE id='" . $flight['departure_id'] . "'")->fetch_assoc();
 $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_id'] . "'")->fetch_assoc();
+
+
+$luggage = $conn->query("SELECT * FROM luggage WHERE ticket_id= '$id'")->fetch_assoc();
+
 ?>
 <style>
     label {
@@ -78,7 +82,7 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
         </div>
     </div>
 
-    <div class="bg-dark" style="overflow-y:scroll">
+    <div class="bg-dark mb-3" style="overflow-y:scroll">
         <div class="bg-dark py-3 mx-auto" style="overflow:hidden;width:1180px">
             <div class="card border-0 mx-auto" style="overflow:hidden;width:1150px">
 
@@ -212,5 +216,25 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
             </div>
         </div>
 
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-body border-bottom">
+            <p class="h5 m-0 ">Luggage Details</p>
+        </div>
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <p>Luggage Weight : <?php echo $luggage['weight'] ?></p>
+                        <p>Current Stage : <?php echo $luggage['status'] ?></p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="qr_code" data-height="140" data-width="140" data-url="luggage_<?php echo $luggage['id'] ?>"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
