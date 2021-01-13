@@ -20,7 +20,15 @@ $plane = $conn->query("SELECT * FROM plane WHERE id ='" . $flight['plane_id'] . 
 $departure = $conn->query("SELECT * FROM airports WHERE id='" . $flight['departure_id'] . "'")->fetch_assoc();
 $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_id'] . "'")->fetch_assoc();
 
+$boarding_allowed = true;
+
+if ($flight['departure_date'] >= date('Y-m-d')) {
+    if ($flight['departure_time'] >= date('H:i:s')) {
+        $boarding_allowed = false;
+    }
+}
 ?>
+
 <div class="container">
     <div class="d-flex align-items-center justify-content-between">
         <a class="btn btn-sm btn-dark" href="scan"><i class="fa fa-chevron-left"></i> Back</a>
@@ -217,14 +225,22 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
             </div>
 
         </div>
-        <div class="card">
-            <div class="card-body">
-                <form action="" method="post" class="d-flex align-items-center justify-content-between">
-                    <button name="submit" value="reject" class="btn btn-danger"><i class="fa fa-times"></i> Reject</button>
-                    <button name="submit" value="accept" class="btn btn-success"><i class="fa fa-check"></i> Accept</button>
-                </form>
+        <?php if (!$boarding_allowed) { ?>
+            <div class="card">
+                <div class="card-body">
+                    <form action="" method="post" class="d-flex align-items-center justify-content-between">
+                        <button name="submit" value="reject" class="btn btn-danger"><i class="fa fa-times"></i> Reject</button>
+                        <button name="submit" value="accept" class="btn btn-success"><i class="fa fa-check"></i> Accept</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        <?php } else { ?>
+            <div class="card mb-3">
+                <div class="card-body d-flex align-items-center justify-content-between h3 py-4">
+                    <p class="mb-0">Sorry This Flight is No More Available </p>
+                </div>
+            </div>
+        <?php } ?>
     <?php } else { ?>
         <div class="card mb-3">
             <div class="card-body d-flex align-items-center justify-content-between h3 py-4">

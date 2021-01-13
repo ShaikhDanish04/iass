@@ -5,7 +5,7 @@
     <div class="card-body text-center">
         <p class="h3">QR Code Scanner</p>
         <div class="rounded mb-3 bg-light video-container">
-            <video class="" height="300" width="300" id="preview" style="object-fit: cover;"></video>
+            <video class="rounded" height="300" width="300" id="preview" style="object-fit: cover;"></video>
         </div>
         <div class="cameras btn-group mb-3">
             <!-- <button class="btn btn-primary start">Start</button> -->
@@ -13,7 +13,7 @@
             <button class="btn btn-dark mirror">Mirror</button>
         </div>
         <div>
-            <button class="btn btn-success scan">Scan</button>
+            <button class="btn btn-success mx-1 scan">Scan</button>
         </div>
     </div>
 </div>

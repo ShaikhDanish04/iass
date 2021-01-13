@@ -53,5 +53,9 @@
                 height: height
             });
         })
+
+        $('.qr_code').click(function() {
+            alert('hi');
+        })
     });
 </script>
