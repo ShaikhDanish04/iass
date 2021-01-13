@@ -1,5 +1,5 @@
-<div class="container text-center">
-    <p class="h3 my-4">Customer Check-In</p>
+<div class="container">
+    <p class="h3 my-4 text-center">Customer Check-In</p>
     <hr>
     <div class=" mt-4 d-flex justify-content-center">
         <?php
@@ -12,8 +12,16 @@
     $('.scan').click(function() {
         let result = scanner.scan()
 
+
         if (result != null) {
-            alert(result.content);
+            // alert(result.content);
+            code = result.content.split('_');
+
+            if (code[0] == 'ticket') {
+                location.href = 'submit?id=' + code[1];
+            }
+
+
         } else {
             alert('Invalid');
         }

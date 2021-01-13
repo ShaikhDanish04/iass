@@ -43,6 +43,7 @@
             for (i = 0; i < cameras.length; i++) {
                 $('.cameras').prepend('<button class="btn btn-primary start" data-id="' + i + '">' + cameras[i].name + '</button>');
                 $('.start[data-id="' + i + '"]').data('id', cameras[i]);
+                scanner.start(cameras[0]);
             }
         } else {
             console.error('No cameras found.');
