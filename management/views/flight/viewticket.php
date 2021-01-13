@@ -99,7 +99,7 @@ $arrival = $conn->query("SELECT * FROM airports WHERE id='" . $flight['arrival_i
                                 </div>
 
                                 <div class="bg-light text-center py-3">
-                                    <div class="qr_code" data-height="120" data-width="120" data-url="5"></div>
+                                    <div class="qr_code" data-height="120" data-width="120" data-url="ticket_<?php echo $ticket['id']?>"></div>
                                     <p class="m-0 text-center h5">Ticket</p>
                                     <p class="m-0 text-center h6">QR Code</p>
                                 </div>

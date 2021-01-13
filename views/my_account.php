@@ -76,7 +76,7 @@
                                                 '   <td>' . $row['passenger_passport_number'] . '</td>' .
                                                 '   <td>' . pdate($row['booking_date']) . ' ' . ptime($row['booking_time']) . '</td>' .
                                                 '   <td>' . $luggage['status'] . '</td>' .
-                                                '   <td><span class="qr_code" data-url="' . $row['id'] . '"></span></td>' .
+                                                '   <td><span class="qr_code" data-url="ticket_' . $row['id'] . '"></span></td>' .
                                                 '   <td class="text-nowrap">' .
                                                 '      <a href="viewticket?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View Ticket</a>' .
                                                 '   </td>' .
