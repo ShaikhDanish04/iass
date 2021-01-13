@@ -1,21 +1,19 @@
 <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 
 
-<div class="container-fluid">
-    <div class="card" style="width: 350px">
-        <div class="card-body text-center">
-            <p class="h3">QR Code Scanner</p>
-            <div class="rounded mb-3 bg-light video-container">
-                <video class="" height="300" width="300" id="preview" style="object-fit: cover;"></video>
-            </div>
-            <div class="cameras btn-group mb-3">
-                <!-- <button class="btn btn-primary start">Start</button> -->
-                <button class="btn btn-danger stop">Stop</button>
-                <button class="btn btn-dark mirror">Mirror</button>
-            </div>
-            <div>
-                <button class="btn btn-success scan">Scan</button>
-            </div>
+<div class="card" style="width: 350px">
+    <div class="card-body text-center">
+        <p class="h3">QR Code Scanner</p>
+        <div class="rounded mb-3 bg-light video-container">
+            <video class="" height="300" width="300" id="preview" style="object-fit: cover;"></video>
+        </div>
+        <div class="cameras btn-group mb-3">
+            <!-- <button class="btn btn-primary start">Start</button> -->
+            <button class="btn btn-danger stop">Stop</button>
+            <button class="btn btn-dark mirror">Mirror</button>
+        </div>
+        <div>
+            <button class="btn btn-success scan">Scan</button>
         </div>
     </div>
 </div>

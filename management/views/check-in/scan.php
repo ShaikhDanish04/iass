@@ -1,8 +1,11 @@
-<div class="container">
-    <p class="h3">Customer Check-In</p>
-    <?php
-    include('qr_scanner.php');
-    ?>
+<div class="container text-center">
+    <p class="h3 my-4">Customer Check-In</p>
+    <hr>
+    <div class=" mt-4 d-flex justify-content-center">
+        <?php
+        include('qr_scanner.php');
+        ?>
+    </div>
 </div>
 
 <script>
