@@ -11,8 +11,12 @@
 
     <video id="preview"></video>
 
-    <button class="btn btn-primary start">Start</button>
+    <div class="cameras">
+        <!-- <button class="btn btn-primary start">Start</button> -->
+    </div>
     <button class="btn btn-danger stop">Stop</button>
+
+    <button class="btn btn-dark mirror">Mirror</button>
 
     <script type="text/javascript">
         let scanner = new Instascan.Scanner({
@@ -21,20 +25,33 @@
         scanner.addListener('scan', function(content) {
             alert(content);
         });
-        $('.start').click(function() {
-            Instascan.Camera.getCameras().then(function(cameras) {
-                if (cameras.length > 0) {
-                    scanner.start(cameras[1]);
-                } else {
-                    console.error('No cameras found.');
+        Instascan.Camera.getCameras().then(function(cameras) {
+            if (cameras.length > 0) {
+                for (i = 0; i < cameras.length; i++) {
+                    console.log(cameras[i]);
+                    $('.cameras').append('<button class="btn btn-primary start" data-id="' + i + '">Camera ' + (i + 1) + '</button>');
+                    $('.start[data-id="' + i + '"]').data('id', cameras[i]);
                 }
-            }).catch(function(e) {
-                console.error(e);
-            });
+            } else {
+                console.error('No cameras found.');
+            }
+        }).catch(function(e) {
+            console.error(e);
+        });
+        $(document).on('click', '.start', function() {
+            console.log($(this).data('id'));
+            scanner.start($(this).data('id'));
         })
 
         $('.stop').click(function() {
             scanner.stop();
+        })
+        $('.mirror').click(function() {
+            if (scanner.mirror) {
+                scanner.mirror = false;
+            } else {
+                scanner.mirror = true;
+            }
         })
     </script>
 
