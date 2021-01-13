@@ -96,12 +96,12 @@
                                 '    <td class="text-center">' .
                                 '       <p class="h3">' . $departure['code'] . '</p>'  .
                                 '       <p class="small">' . $departure['state'] . '</p>'  .
-                                '       <p>' . pdate($row['departure_date']) . ' ' . ptime($row['departure_time']) . ' IST</p>' .
+                                '       <p class="text-nowrap">' . pdate($row['departure_date']) . ' ' . ptime($row['departure_time']) . ' IST</p>' .
                                 '    </td>' .
                                 '    <td class="text-center">' .
                                 '       <p class="h3">' . $arrival['code'] . '</p>'  .
                                 '       <p class="small">' . $arrival['state'] . '</p>'  .
-                                '       <p>' . pdate($row['arrival_date']) . ' ' . ptime($row['arrival_time']) . ' IST</p>' .
+                                '       <p class="text-nowrap">' . pdate($row['arrival_date']) . ' ' . ptime($row['arrival_time']) . ' IST</p>' .
                                 '    </td>' .
                                 '    <td><span class="qr_code" data-url=flight_' . $row['id'] . '></span></td>' .
                                 '    <td class="text-center">' .  $ticket['seat_number'] . ' / ' . $plane['capacity'] . '</td>' .
