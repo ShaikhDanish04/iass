@@ -110,7 +110,7 @@
                                 <tbody class="text-center">
                                     <?php
                                     
-                                    $result = $conn->query("SELECT * FROM flight WHERE departure_date >= '" . date('Y-m-d') . "' AND departure_time >='" . date('H:i:s') . "' ORDER BY id DESC");
+                                    $result = $conn->query("SELECT * FROM flight WHERE departure_date >= '" . date('Y-m-d') . "' ORDER BY id DESC");
                                     $count = 0;
                                     while ($row = $result->fetch_assoc()) {
 

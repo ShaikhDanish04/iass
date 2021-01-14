@@ -30,11 +30,11 @@
                         $result = $conn->query("SELECT * FROM flight ORDER BY id DESC");
                         while ($row = $result->fetch_assoc()) {
                             if ($row['departure_date'] >= date('Y-m-d')) {
-                                if ($row['departure_time'] >= date('H:i:s')) {
+                                // if ($row['departure_time'] >= date('H:i:s')) {
                                     $status = 'Open';
-                                } else {
-                                    $status = 'In Journey';
-                                }
+                                // } else {
+                                //     $status = 'In Journey';
+                                // }
                             } else {
                                 $status = 'Close';
                             }
