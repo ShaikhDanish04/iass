@@ -31,7 +31,7 @@ if ($departure == $arrival) {
                 <?php
 
 
-                $result = $conn->query("SELECT * FROM flight WHERE departure_id='$departure' AND arrival_id='$arrival' AND departure_date ='$date' AND departure_time >='" . date('H:i:s') . "' ORDER BY id DESC");
+                $result = $conn->query("SELECT * FROM flight WHERE departure_id='$departure' AND arrival_id='$arrival' AND departure_date ='$date' ORDER BY id DESC");
                 if ($result->num_rows > 0) {
                     $count = 0;
                     while ($row  = $result->fetch_assoc()) {
