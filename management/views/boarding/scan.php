@@ -9,21 +9,29 @@
 </div>
 
 <script>
-    $('.scan').click(function() {
-        let result = scanner.scan()
+    // $('.scan').click(function() {
+    //     let result = scanner.scan()
 
 
-        if (result != null) {
-            // alert(result.content);
-            code = result.content.split('_');
+    //     if (result != null) {
+    //         // alert(result.content);
+    //         code = result.content.split('_');
 
-            if (code[0] == 'ticket') {
-                location.href = 'submit?id=' + code[1];
-            }
+    //         if (code[0] == 'ticket') {
+    //             location.href = 'submit?id=' + code[1];
+    //         }
 
 
-        } else {
-            alert('Invalid');
+    //     } else {
+    //         alert('Invalid');
+    //     }
+    // })
+
+    scanner.addListener('scan', function(content) {
+        code = content.split('_');
+
+        if (code[0] == 'ticket') {
+            location.href = 'submit?id=' + code[1];
         }
-    })
+    });
 </script>

@@ -12,9 +12,9 @@
             <button class="btn btn-danger stop">Stop</button>
             <button class="btn btn-dark mirror">Mirror</button>
         </div>
-        <div>
+        <!-- <div>
             <button class="btn btn-success mx-1 scan">Scan</button>
-        </div>
+        </div> -->
     </div>
 </div>
 
