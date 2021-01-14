@@ -103,14 +103,16 @@
                                     <th>From</th>
                                     <th>To</th>
                                     <th>Timing</th>
+                                    <th>Departure</th>
+                                    <th>Arrival</th>
                                     <th>Seats Available</th>
                                     <th>Fare</th>
                                     <th></th>
                                 </thead>
                                 <tbody class="text-center">
                                     <?php
-                                    
-                                    $result = $conn->query("SELECT * FROM flight WHERE departure_date >= '" . date('Y-m-d') . "' ORDER BY id DESC");
+
+                                    $result = $conn->query("SELECT * FROM flight ORDER BY id DESC");
                                     $count = 0;
                                     while ($row = $result->fetch_assoc()) {
 
@@ -124,30 +126,49 @@
                                         if (!($ticket > 0)) $ticket['seat_number'] = 0;
 
                                         $count++;
-                                        echo '' .
-                                            '<tr>' .
-                                            '    <td>' . $count . '</td>' .
-                                            '    <td class="text-center">' .
-                                            '       <p class=" m-0">' . $departure['city'] . '</p>'  .
-                                            '       <p class="h3">' . $departure['code'] . '</p>'  .
-                                            '       <p class="small">' . $departure['state'] . '</p>'  .
-                                            '    </td>' .
-                                            '    <td class="text-center">' .
-                                            '       <p class=" m-0">' . $arrival['city'] . '</p>'  .
-                                            '       <p class="h3">' . $arrival['code'] . '</p>'  .
-                                            '       <p class="small">' . $arrival['state'] . '</p>'  .
-                                            '    </td>' .
-                                            '    <td> ' .
-                                            '       <p>' . date_format(date_create($row['departure_time']), 'h:i A') . ' - ' . date_format(date_create($row['arrival_time']), 'h:i A') . '</p>' .
-                                            '    </td>' .
-                                            '    <td class="text-center">' . ($plane['capacity'] - $ticket['seat_number']) . ' / ' . $plane['capacity'] . '</td>' .
-                                            '    <td class="text-nowrap">' .
-                                            '       <p>₹' . $row['economy_fare'] . '</p>' .
-                                            '    </td>' .
-                                            '    <td class="text-nowrap">' .
-                                            '       <a target="blank" href="view_flight?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-plane"></i> View</a>' .
-                                            '    </td>' .
-                                            '</tr>';
+
+                                        $status = 'Open';
+                                        if ($row['departure_date'] >= date('Y-m-d')) {
+                                            if (date_format(date_create($row['departure_date'] . $row['departure_time']), 'Y-m-d H:i:s') > date('Y-m-d H:i:s')) {
+                                                $status = 'Open';
+                                            } else {
+                                                if (date_format(date_create($row['arrival_date'] . $row['arrival_time']), 'Y-m-d H:i:s') < date('Y-m-d H:i:s')) {
+                                                    $status = 'In Journey';
+                                                } else {
+                                                    $status = 'Close';
+                                                }
+                                            }
+                                        } else {
+                                            $status = 'Close';
+                                        }
+
+                                        if ($status == 'Open')
+                                            echo '' .
+                                                '<tr>' .
+                                                '    <td>' . $count . '</td>' .
+                                                '    <td class="text-center">' .
+                                                '       <p class=" m-0">' . $departure['city'] . '</p>'  .
+                                                '       <p class="h3">' . $departure['code'] . '</p>'  .
+                                                '       <p class="small">' . $departure['state'] . '</p>'  .
+                                                '    </td>' .
+                                                '    <td class="text-center">' .
+                                                '       <p class=" m-0">' . $arrival['city'] . '</p>'  .
+                                                '       <p class="h3">' . $arrival['code'] . '</p>'  .
+                                                '       <p class="small">' . $arrival['state'] . '</p>'  .
+                                                '    </td>' .
+                                                '    <td> ' .
+                                                '       <p class="m-0">' . date_format(date_create($row['departure_time']), 'h:i A') . ' - ' . date_format(date_create($row['arrival_time']), 'h:i A') . '</p>' .
+                                                '    </td>' .
+                                                '    <td class="text-center">' .  pdate($row['departure_date']) . '</td>' .
+                                                '    <td class="text-center">' .  pdate($row['arrival_date']) . '</td>' .
+                                                '    <td class="text-center">' . ($plane['capacity'] - $ticket['seat_number']) . ' / ' . $plane['capacity'] . '</td>' .
+                                                '    <td class="text-nowrap">' .
+                                                '       <p>₹' . $row['economy_fare'] . '</p>' .
+                                                '    </td>' .
+                                                '    <td class="text-nowrap">' .
+                                                '       <a target="blank" href="view_flight?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-plane"></i> View</a>' .
+                                                '    </td>' .
+                                                '</tr>';
                                     }
                                     ?>
                                 </tbody>
