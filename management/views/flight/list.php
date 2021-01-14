@@ -31,16 +31,16 @@
                         while ($row = $result->fetch_assoc()) {
                             if ($row['departure_date'] >= date('Y-m-d')) {
                                 if (date_format(date_create($row['departure_date'] . $row['departure_time']), 'Y-m-d H:i:s') > date('Y-m-d H:i:s')) {
-                                    $status = 'Open';
+                                    $status = badge('success', 'Open');
                                 } else {
                                     if (date_format(date_create($row['arrival_date'] . $row['arrival_time']), 'Y-m-d H:i:s') < date('Y-m-d H:i:s')) {
-                                        $status = 'In Journey';
+                                        $status = badge('info', 'In Journey');
                                     } else {
-                                        $status = 'Close';
+                                        $status = badge('dark', 'Close');
                                     }
                                 }
                             } else {
-                                $status = 'Close';
+                                $status = badge('dark', 'Close');
                             }
 
                             $plane = $conn->query("SELECT * FROM plane WHERE id='" . $row['plane_id'] . "'")->fetch_assoc();
@@ -71,7 +71,7 @@
                                 '    </td>' .
                                 '    <td><span class="qr_code" data-height="110" data-width="110" data-url=flight_' . $row['id'] . '></span></td>' .
                                 '    <td>' . $status . '</td>' .
-                                '    <td class="text-center">' .  $ticket['seat_number'] . ' / ' . $plane['capacity'] . '</td>' .
+                                '    <td class="text-center">' .  badge('light',  '<span class="h5"><span class="font-weight-light">' . $ticket['seat_number'] . '</span> / ' . $plane['capacity'] . '</span>') . '</td>' .
                                 '    <td class="text-nowrap">' .
                                 '       <a href="tickets?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .
                                 '    </td>' .

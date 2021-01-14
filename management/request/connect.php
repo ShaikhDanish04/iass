@@ -29,6 +29,10 @@ function alert($type, $message)
         '</div>';
 }
 
+function badge($type, $message)
+{
+    return '<span class="badge badge-' . $type . ' px-3 py-2">' . $message . '</span>';
+}
 
 function pdatetime($datetime)
 {
