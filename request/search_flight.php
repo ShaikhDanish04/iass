@@ -71,7 +71,7 @@ if ($departure == $arrival) {
                             '</tr>';
                     }
                 } else {
-                    echo '<tr><td colspan="7"><p class="h3 my-3 font-weight-normal">No Flights Found</p></td></tr>';
+                    echo '<tr><td colspan="7"><p class="h3 my-3 font-weight-normal">No Flights Found Here</p></td></tr>';
                 }
                 ?>
             </tbody>
