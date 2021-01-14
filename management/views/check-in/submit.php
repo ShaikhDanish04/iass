@@ -27,6 +27,24 @@ if ($flight['departure_date'] >= date('Y-m-d')) {
         $boarding_allowed = false;
     }
 }
+
+if ($flight['departure_date'] >= date('Y-m-d')) {
+    if (date_format(date_create($flight['departure_date'] . $flight['departure_time']), 'Y-m-d H:i:s') > date('Y-m-d H:i:s')) {
+        $boarding_allowed = false;
+        $status = badge('success', 'Open');
+    } else {
+        if (date_format(date_create($flight['arrival_date'] . $flight['arrival_time']), 'Y-m-d H:i:s') < date('Y-m-d H:i:s')) {
+            $status = badge('info', 'In Journey');
+            $boarding_allowed = true;
+        } else {
+            $status = badge('dark', 'Close');
+            $boarding_allowed = true;
+        }
+    }
+} else {
+    $status = badge('dark', 'Close');
+    $boarding_allowed = true;
+}
 ?>
 
 <div class="container">

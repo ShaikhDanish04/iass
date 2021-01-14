@@ -104,7 +104,7 @@
                                 '       <p class="text-nowrap">' . pdate($row['arrival_date']) . ' ' . ptime($row['arrival_time']) . ' IST</p>' .
                                 '    </td>' .
                                 '    <td><span class="qr_code" data-url=flight_' . $row['id'] . '></span></td>' .
-                                '    <td class="text-center">' .  $ticket['seat_number'] . ' / ' . $plane['capacity'] . '</td>' .
+                                '    <td class="text-center">' .  badge('light',  '<span class="h5"><span class="font-weight-light">' . $ticket['seat_number'] . '</span> / ' . $plane['capacity'] . '</span>') . '</td>' .
                                 '    <td class="text-nowrap">' .
                                 // '       <a href="edit?id=' . $row['id'] . '" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Edit</a>' .
                                 '       <a href="flight/tickets?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a>' .

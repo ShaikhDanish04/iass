@@ -34,7 +34,7 @@
                                 '       <p class="">' . $ticket['passenger_passport_number'] . '</p>' .
                                 '   </td>' .
                                 '    <td>' . $row['weight'] . ' kg</td>' .
-                                '    <td>' . $row['status'] . '</td>' .
+                                '    <td>' . badge('dark', $row['status']) . '</td>' .
                                 '    <td><a href="view?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View</a></td>' .
                                 '</tr>';
                         }

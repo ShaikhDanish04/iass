@@ -49,7 +49,7 @@
                                 '       <p class="font-italic">' . $customer['mobile'] . '</p>' .
                                 '   </td>' .
                                 '   <td><span class="qr_code" data-height="110" data-width="110" data-url="ticket_' . $row['id'] . '"></span></td>' .
-                                '   <td>' . $row['stage'] . '</td>' .
+                                '   <td>' . badge('dark', $row['stage']) . '</td>' .
                                 '   <td class="text-nowrap">' .
                                 '      <a href="viewticket?id=' . $row['id'] . '" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i> View Ticket</a>' .
                                 '   </td>' .
