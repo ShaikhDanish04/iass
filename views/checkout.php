@@ -35,8 +35,8 @@ if (isset($_POST['checkout'])) {
     if ($plane['capacity'] == $seat_number) {
         $response = alert('warning', 'Sorry !!! No More Seats Available');
     } else {
-        $result = $conn->query("INSERT INTO `ticket` (`flight_id`, `customer_id`, `passenger_passport_number`, `passenger_details`, `seat_number`, `booking_date`, `booking_time`) 
-                                        VALUES ('$flight_id', '$customer_id', '$passenger_passport_number', '$passenger', '$seat_number', '$booking_date', '$booking_time')");
+        $result = $conn->query("INSERT INTO `ticket` (`flight_id`, `customer_id`, `passenger_passport_number`, `passenger_details`, `seat_number`, `booking_date`, `booking_time`,`stage`) 
+                                        VALUES ('$flight_id', '$customer_id', '$passenger_passport_number', '$passenger', '$seat_number', '$booking_date', '$booking_time','check-in')");
 
         if ($result === TRUE) {
             $response = alert('success', 'Transaction Successfull !!! Your Ticket is Booked Check Your Account');
