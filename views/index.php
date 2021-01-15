@@ -185,7 +185,42 @@
         </div>
     </div>
     <p class="my-4 display-4">About US</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ipsa tempore temporibus inventore ea quae? Iusto nemo alias esse consequatur neque obcaecati maiores dolore, dignissimos rem consectetur natus dolor eaque!
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ipsa tempore temporibus inventore ea quae? Iusto nemo alias esse consequatur neque obcaecati maiores dolore, dignissimos rem consectetur natus dolor eaque!</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem ipsa tempore temporibus inventore ea quae? Iusto nemo alias esse consequatur neque obcaecati maiores dolore, dignissimos rem consectetur natus dolor eaque!</p>
+    <p class="text-justify">
+        This project automates the various manual procedures that occur during Check-In and CheckOut processes at airports and maintain security standards. We choose the topic of "Intelligent
+        Automation and Security System for Airports” as it can provide Real-Time notifications and
+        navigation to its users and also authenticate and provide validation. Every year millions of
+        passengers travel around the world through airways. They all have to go through long and tiring
+        duration of security checks, checking-in and boarding .In India alone for domestic flights
+        usually a passenger has to arrive 2-3 hours before the flight time and for international flights the
+        time is even more. Many of the passengers are first time travelers and old age people who do
+        not have any clue how to work out things and makes situations very complex. The solution that
+        our project provides will not only help the passengers but also save lot of resources in form of
+        money and time. This automated system will reduce the manual work by about 50% and
+        increase the efficiency.</p>
+
+    <p class="my-4 h1">Features</p>
+    <p class="text-justify">
+        <b>Automated Check-in</b> : IASS Customer Side Generated Code will be scanned be the IASS
+        Management System and update the customer status in the system as check-in to the airport
+    </p>
+    <p class="text-justify">
+        <b>Smart Baggage Check-in</b> : Each Baggage of the customer will be given barcode, which will be
+        scanned by the IASS IoT machine (Virtual Hook) and update the clients luggage status in their
+        respective login.
+    </p>
+    <p class="text-justify">
+        <b>Advanced Security Check</b> : Each step of the Security Check will be updated in the IASS
+        Management System in Realtime Reflecting on the customers login. Every scanning machine will be
+        an IoT device and it will send data of customer directly to IASS Management System
+    </p>
+    <p class="text-justify">
+        <b>Intelligent Immigration</b> : Generate Online Passport Stamp on Virual Passport for Contact Less
+        Exectuion. It will keep record of every Passport ID and Their Journey
+    </p>
+
+    <p class="text-justify">
+        <b>Real-Time Luggage Tracking</b> : IASS Management System will send realtime data of customers
+        luggage to customer login. And send a time for their luggage collection on arrival location at luggage
+        counter.
+    </p>
 </div>
