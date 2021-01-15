@@ -5,7 +5,7 @@
                 position: absolute;
                 right: unset;
                 bottom: unset;
-                top: 40%;
+                top: 30%;
                 left: 5%;
                 z-index: 10;
                 padding-top: 20px;
@@ -17,6 +17,7 @@
         <div class="carousel-item active">
             <img width="100%" src="assets/img/banner1.jpg" alt="Second slide">
             <div class="carousel-caption text-dark d-none d-md-block">
+                <h1>Airport</h1>
                 <h3>Intelligent Automated Security System</h3>
                 <p>Book Your Ticket Now</p>
             </div>
@@ -26,7 +27,7 @@
 
 <div class="container my-5">
 
-    <div class="card shadow border-0" style="background: linear-gradient(45deg, #e9e9e9, #f3f3f3);">
+    <div class="card shadow border-0 mb-3" style="background: linear-gradient(45deg, #e9e9e9, #f3f3f3);">
         <div class="card-body">
             <!-- Nav tabs -->
             <ul class="nav nav-pills" id="navId">
@@ -184,6 +185,8 @@
             </div>
         </div>
     </div>
+
+
     <p class="my-4 display-4">About US</p>
     <p class="text-justify">
         This project automates the various manual procedures that occur during Check-In and CheckOut processes at airports and maintain security standards. We choose the topic of "Intelligent
@@ -198,6 +201,29 @@
         money and time. This automated system will reduce the manual work by about 50% and
         increase the efficiency.</p>
 
+    <div class="card shadow mx-auto my-4 border-0" style="max-width:600px;background: linear-gradient(45deg, #fcfcfc, #fff)">
+        <div class="card-body text-center">
+            <p class="h5 my-4">"Intelligent Automation & Security System for Airports"</p>
+            <p class="mb-0">A Report submitted</p>
+            <p>By</p>
+            <p class="mb-0 font-weight-bold">Aryan Shaikh (15)</p>
+            <p class="small">(11811071)</p>
+            <p class="mb-0 font-weight-bold">Sumedh Maharaj (43)</p>
+            <p class="small">(11811098)</p>
+            <p class="mb-0 font-weight-bold">Zeshan Shaikh (73)</p>
+            <p class="small">(11810261)</p>
+            <p class="mb-0 font-weight-bold">Siddharth Kumar Singh (33)</p>
+            <p class="small">(11811203)</p>
+            <p class="mb-0 font-weight-bold">Sharan Patil (18)</p>
+            <p class="small">(11811274)</p>
+            <p class="m-0">Under the Guidance of</p>
+            <p class="font-weight-bold">Dr. Sandip Shinde</p>
+            <p class="h5">BACHELOR OF TECHNOLOGY</p>
+            <p>COMPUTER SCIENCE & ENGINEERING</p>
+            <p class="h3 font-weight-normal"> Vishwakarma Institute Of Technology</p>
+
+        </div>
+    </div>
     <p class="my-4 h1">Features</p>
     <p class="text-justify">
         <b>Automated Check-in</b> : IASS Customer Side Generated Code will be scanned be the IASS
