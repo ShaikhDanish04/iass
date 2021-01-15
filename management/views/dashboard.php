@@ -8,7 +8,7 @@
             <div class="card bg-primary text-white mb-4">
                 <div class="card-body text-center">
                     <p class="h3"><?php echo $conn->query("SELECT * FROM flight ")->num_rows ?></p>
-                    <p class="m-0">Flight Active</p>
+                    <p class="m-0">Total Flight</p>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="card bg-warning text-white mb-4">
                 <div class="card-body text-center">
                     <p class="h3"><?php echo $conn->query("SELECT * FROM ticket ")->num_rows ?></p>
-                    <p class="m-0">Ticket Pending</p>
+                    <p class="m-0">Total Ticket</p>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
             <div class="card bg-success text-white mb-4">
                 <div class="card-body text-center">
                     <p class="h3"><?php echo $conn->query("SELECT * FROM pilot ")->num_rows ?></p>
-                    <p class="m-0">Pilot Onboard</p>
+                    <p class="m-0">Total Pilot</p>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
             <div class="card bg-danger text-white mb-4">
                 <div class="card-body text-center">
                     <p class="h3"><?php echo $conn->query("SELECT * FROM plane ")->num_rows ?></p>
-                    <p class="m-0">Plane Available</p>
+                    <p class="m-0">Total Plane</p>
                 </div>
             </div>
         </div>
