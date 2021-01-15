@@ -203,7 +203,7 @@
 
     <div class="card shadow mx-auto my-4 border-0" style="max-width:600px;background: linear-gradient(45deg, #fcfcfc, #fff)">
         <div class="card-body text-center">
-            <p class="h5 my-4">"Intelligent Automation & Security System for Airports"</p>
+            <p class="h5 my-4">Intelligent Automation & Security System for Airports</p>
             <p class="mb-0">A Report submitted</p>
             <p>By</p>
             <p class="mb-0 font-weight-bold">Aryan Shaikh (15)</p>
@@ -217,7 +217,7 @@
             <p class="mb-0 font-weight-bold">Sharan Patil (18)</p>
             <p class="small">(11811274)</p>
             <p class="m-0">Under the Guidance of</p>
-            <p class="font-weight-bold">Dr. Sandip Shinde</p>
+            <p class="font-weight-bold mb-4">Dr. Sandip Shinde</p>
             <p class="h5">BACHELOR OF TECHNOLOGY</p>
             <p>COMPUTER SCIENCE & ENGINEERING</p>
             <p class="h3 font-weight-normal"> Vishwakarma Institute Of Technology</p>
