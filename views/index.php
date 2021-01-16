@@ -204,13 +204,13 @@
     <div class="card shadow mx-auto my-4 border-0" style="max-width:600px;background: linear-gradient(45deg, #fcfcfc, #fff)">
         <div class="card-body text-center">
             <p class="h5 my-4">Intelligent Automation & Security System for Airports</p>
-            <p class="mb-0">A Report submitted</p>
+            <p class="mb-0">Project Developed</p>
             <p>By</p>
             <p class="mb-0 font-weight-bold">Aryan Shaikh (15)</p>
             <p class="small">(11811071)</p>
             <p class="mb-0 font-weight-bold">Sumedh Maharaj (43)</p>
             <p class="small">(11811098)</p>
-            <p class="mb-0 font-weight-bold">Zeshan Shaikh (73)</p>
+            <p class="mb-0 font-weight-bold">Zeeshan Aminuddin Shaikh (73)</p>
             <p class="small">(11810261)</p>
             <p class="mb-0 font-weight-bold">Siddharth Kumar Singh (33)</p>
             <p class="small">(11811203)</p>
