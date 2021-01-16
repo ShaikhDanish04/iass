@@ -210,7 +210,7 @@
             <p class="small">(11811071)</p>
             <p class="mb-0 font-weight-bold">Sumedh Maharaj (43)</p>
             <p class="small">(11811098)</p>
-            <p class="mb-0 font-weight-bold">Zeeshan Aminuddin Sheikh (73)</p>
+            <p class="mb-0 font-weight-bold">Zeshaan Aminuddin Sheikh (73)</p>
             <p class="small">(11810261)</p>
             <p class="mb-0 font-weight-bold">Siddharth Kumar Singh (33)</p>
             <p class="small">(11811203)</p>
